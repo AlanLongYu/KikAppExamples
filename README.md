@@ -1,2 +1,2 @@
 # KikAppExamples
-Projects examples built with kikapp
+Examples of projects built with kikapp
