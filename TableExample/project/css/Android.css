@@ -1,0 +1,14 @@
+/** 
+ * Style for Android appliaction.
+ * @version 1.0
+ */
+
+table.Example{
+	background-color: #DCDCDC;
+}
+
+label.Example{
+	font-size:"25";
+	font-family:"Roboto-Light.ttf";
+	forecolor:"#000000";	
+}
