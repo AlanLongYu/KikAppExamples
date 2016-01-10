@@ -2,8 +2,8 @@
 
 
 /**
- * Button control example.
- * mainButton.php
+ * SDPanel example.
+ * mainSDPanel.php
  */
  
 //Create SDPanel
