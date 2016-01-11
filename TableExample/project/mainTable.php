@@ -1,6 +1,5 @@
 <?php
 
-
 /**
  * Table example.
  * mainTable.php

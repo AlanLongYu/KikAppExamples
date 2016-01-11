@@ -1,6 +1,5 @@
 <?php
 
-
 /**
  * Button control example.
  * mainButton.php

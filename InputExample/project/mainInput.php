@@ -1,6 +1,5 @@
 <?php
 
-
 /**
  * Input control example.
  * mainInput.php

@@ -1,6 +1,5 @@
 <?php
 
-
 /**
  * SDPanel example.
  * mainSDPanel.php
