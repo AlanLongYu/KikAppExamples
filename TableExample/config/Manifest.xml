@@ -10,7 +10,7 @@
         	<packagedName></packagedName>
         	<lunchImage>lunchimage.png</lunchImage>
         	<applicationIcon>appicon.png</applicationIcon>        	
-        	<applicationTitle>Hellow World</applicationTitle>
+        	<applicationTitle>Hello World</applicationTitle>
         </android>
         <iOS navigationStyle="Default" layoutOrientation="Portrait">
             <Theme>iOSTheme</Theme>

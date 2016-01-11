@@ -1,0 +1,27 @@
+/** 
+ * Style for Android appliaction.
+ * @version 1.0
+ */
+
+button.Example{	
+	font-weight:"bold";
+	forecolor:"#424242";
+	font-size:"17";
+	margin-left:8dip;
+	margin-right:8dip;
+	margin-top:10dip;
+	border-style:"Solid";
+	border-color:"#FE2E2E";
+	border-width:"1dip";
+	border-radius:"5dip";
+	background-color:"#BDBDBD";
+	
+}
+
+input.Example{	
+	forecolor:"#424242";
+	font-size:"17";
+	margin-left:8dip;
+	margin-right:8dip;
+	background-color:"#FFFFFF";	
+}
