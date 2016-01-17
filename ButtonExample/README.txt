@@ -1,6 +1,7 @@
 ##### Example project #####
 Please remember to modify values in config folder
 
-Pasos:
-1. crear un nuevo proyecto
-2. descargar el ejemplo y copiar las carpetas proyect y config dentro del proyecto creado
+Steps to import this example:
+1. Create a new project
+2. Download this example and replace "project" and "config" folder into your project.
+3. Build and Run the project
