@@ -1,6 +1,9 @@
 ##### Example project #####
 Please remember to modify values in config folder
 
-Pasos:
-1. crear un nuevo proyecto
-2. descargar el ejemplo y copiar las carpetas proyect y config dentro del proyecto creado
+Steps:
+1. Create a new kikapp project in /projectPath/projectName/
+2. Download the example and replace "/projectPath/projectName/config" and "/projectPath/projectName/project" folders.
+3. Edit the file /projectPath/projectName/config/Android.properties and add you environment values:
+  jdk_directory=/pathToYourJDK
+  android_sdk=/pathToYourAndroidSDK
