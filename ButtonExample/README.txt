@@ -7,3 +7,4 @@ Steps:
 3. Edit the file /projectPath/projectName/config/Android.properties and add you environment values:
   jdk_directory=/pathToYourJDK
   android_sdk=/pathToYourAndroidSDK
+4. Build and Run the project.
