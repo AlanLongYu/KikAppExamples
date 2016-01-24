@@ -1,6 +1,3 @@
-##### Example project #####
-Please remember to modify values in config folder
-
 Steps:
 1. Create a new kikapp project in /projectPath/projectName/
 2. Download the example and replace "/projectPath/projectName/config" and "/projectPath/projectName/project" folders.
