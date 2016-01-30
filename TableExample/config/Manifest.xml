@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest>
     <application generateAndroid="true" generateiOS="false">
-        <main>mainTable.php</main>
+        <main>main.php</main>
         <services>http://localhost/services/</services>
     	<android navigationStyle="Default" layoutOrientation="Portrait">   
     	    <Theme>Android</Theme>     	
