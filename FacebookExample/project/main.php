@@ -10,22 +10,19 @@ $win -> setCaption("First Facebook Post!");
 
 $mainTable = new Table();
 
-$image= new InputImage();	
-
 $input= new InputText();  						//create input
 $input->setLabelCaption("");
 
 $button = new Button();
-$button -> setCaption("Post on Facebook 2!");
+$button -> setCaption("Post on Facebook");
 $button -> onTap(facebook());
 
 $mainTable -> addControl($input,1,1);
-$mainTable -> addControl($image,2,1);
-$mainTable -> addControl($button,3,1);
+$mainTable -> addControl($button,2,1);
 $win -> addControl($mainTable);
 
 function facebook(){
-	Facebook::PostToWall("First post","Caption","Long message.","http://www.kikapptools.com","");
+	Facebook::PostToWall("First post","Caption",$input,"http://www.kikapptools.com","");
 }
 
 ?>
