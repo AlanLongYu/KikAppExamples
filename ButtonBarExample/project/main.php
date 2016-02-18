@@ -26,10 +26,10 @@ $btn_delete->onTap(delete());
 
 $actionBar->addControl($btn_save);
 $actionBar->addControl($btn_delete);
+$actionBar-> setClass("applicationBars");
 $win->addControl($actionBar);
 
 $mainTable = new Table();
-$mainTable -> setHeaderRowApplicationBarsClass("applicationBars.transparent");
 
 $mainTable->addControl($input,1,1)
 
