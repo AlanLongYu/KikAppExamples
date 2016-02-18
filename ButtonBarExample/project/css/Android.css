@@ -7,8 +7,15 @@ application{
 	
 }
  
-applicationBars{
 
+applicationBars{
+	background-color:"#B71C1C";
+	status-bar-color:"#C62828";
+}
+
+applicationBars.transparent{
+	background-color:"Transparent";
+	status-bar-color:"Transparent";
 }
  
 input{

@@ -6,19 +6,41 @@
  */
 
 $win = new SDPanel();
-$win -> setCaption("Hello world!");
+$win -> setCaption("ButtonBar!");
+
+
+$input= new InputText();
+$input->setLabelCaption("Write your name")
+
+$actionBar= new ActionBar();
+
+$btn_save= new ButtonBar();
+$btn_save-> setCaption("Save");
+$btn_save->onTap(save());
+
+
+$btn_delete= new ButtonBar();
+$btn_delete-> setCaption("Delete");
+$btn_delete->onTap(delete());
+
+
+$actionBar->addControl($btn_save);
+$actionBar->addControl($btn_delete);
+$win->addControl($actionBar);
 
 $mainTable = new Table();
+$mainTable -> setHeaderRowApplicationBarsClass("applicationBars.transparent");
 
-$button = new Button();
-$button -> setCaption("Click me!");
-$button -> onTap(clickme());
+$mainTable->addControl($input,1,1)
 
-$mainTable -> addControl($button,1,1);
+
 $win -> addControl($mainTable);
 
-function clickme(){
-	echo "Hello !";
+function save(){
+	echo "Your name is ".$input."!";
+}
+function delete() {
+	return ;
 }
 
 ?>
