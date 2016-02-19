@@ -1,0 +1,95 @@
+/** 
+ * Style for Android application.
+ * @version 1.0
+ */
+
+application{
+	
+}
+ 
+applicationBars{
+
+}
+ 
+input{
+	forecolor: #000000;
+}
+
+inputtitle{
+
+}
+  
+InputReadOnly{
+	
+}  
+
+button{
+	font-family:"Roboto-Regular.ttf";
+ 	font-size:"14";		
+}
+
+button.red{
+	background-color:#EE4053;
+	font-weight:"bold";
+	forecolor:"#FFFFFF";	
+	margin-top:15dip;
+	margin-left:0dip;
+	margin-right:0dip;
+	margin-bottom:0dip;
+}
+  
+grid{
+	
+}  
+
+gridRow{
+	
+}
+
+gridRowEven{
+	
+}
+
+gridRowOdd{
+	
+}
+
+horizontalLine{
+	
+}
+
+image{
+	
+}
+
+label{
+	
+}
+
+sdPageController{
+	
+}
+
+tab{
+	
+}
+
+tabPage{
+	
+}
+
+tabPageSelected{
+	
+}
+
+tabPageUnSelected{
+	
+}
+
+table{
+ 	
+}
+
+table.general {
+	background-color: #FFFF7F;
+}
