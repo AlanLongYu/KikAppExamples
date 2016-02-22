@@ -63,7 +63,8 @@ function grid_load_products(){
 	//Remember to configurate your server url on the Manifest.xml on <services>
 	$httpClient_prod = new httpClient();
 
-	$result_prod = $httpClient_prod -> Execute('GET',$url_prod);  //you get a JSON
+	$result_prod = $httpClient_prod -> Execute('GET',$url_prod); 
+	//you get a JSON
 
 	//it's a list so you have an array of an array
 	$struct_prod = array(
