@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?><manifest>
     <application generateAndroid="true" generateiOS="false">
         <main>main.php</main>
-        <services>http://localhost/services/</services>
+        <services>http://www.devxtend.com/nicolas/GridExample/services/</services>
     	<android layoutOrientation="Portrait" navigationStyle="Default">   
     	    <Theme>Android</Theme>     	
         	<versionCode>1</versionCode>
