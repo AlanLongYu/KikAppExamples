@@ -58,7 +58,8 @@ function action_prod(){
 }
 
 function grid_load_products(){
-	$url_prod = "http://www.demo.kikapptools.com/magento/apiGecko/productos.php?cId=0";	//the server url
+	$url_prod = "http://www.demo.kikapptools.com/magento/apiGecko/productos.php?cId=0";	
+	//the server url
 	//Remember to configurate your server url on the Manifest.xml on <services>
 	$httpClient_prod = new httpClient();
 
