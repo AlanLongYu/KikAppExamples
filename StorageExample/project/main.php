@@ -26,7 +26,7 @@ $email -> setInviteMessage("E-Mail");
 $pass 	= new InputText();
 $pass -> setClass("inputForm");
 $pass -> setInviteMessage("Password");
-$pass -> setIsPassword(true);
+$pass -> setIsPassword(true);		//it hides characters
 
 $btn_save = new Button();
 $btn_save -> setCaption("LOG IN");
@@ -51,6 +51,7 @@ function login(){
 	
 	if($email == null){
 		echo "E-Mail is a required field.";
+		//you can't leave it blank
 	}else{
 		if($pass == null){
 			echo "Password is a required field.";
@@ -58,7 +59,9 @@ function login(){
 			ProgressIndicator::Show();
 			$url = "http://www.demo.kikapptools.com/magento/apiGecko/clientes.php?metodo=login";
 			$httpClient_post = new httpClient();
-				
+			//the server url
+			//Remember to configurate your server url on the Manifest.xml on <services>
+
 			$inputMetodo = new InputText();
 			$inputMetodo -> setValue("login");
 			
@@ -67,11 +70,13 @@ function login(){
 			$httpClient_post -> addVariable('password',$pass);
 			
 			$result = $httpClient_post -> Execute('POST',$url);
+			//you get a JSON
 			
 			$id_user = new InputText();	
 			$SDTUser = array("customerToken"=>DataType::Character(50));
 			
 			Data::FromJson($SDTUser,$result);
+			//does a merge of the structure you made and the json you got
 				
 			$id_user = $SDTUser['customerToken'];
 			ProgressIndicator::Hide();
