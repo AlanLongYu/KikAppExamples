@@ -18,8 +18,10 @@ $table_grid_product -> setRowsStyle("80dip");
 $table_grid_product -> setColumnsStyle("35%;65%;15dip");
 $table_grid_product -> setHeight("85dip");
 
-$grid -> addData(grid_load_products());	  //the main use of the grid is to load data from a server
-$grid -> onTap(action_prod());		//what happens when you tap on it
+$grid -> addData(grid_load_products());
+//the main use of the grid is to load data from a server
+$grid -> onTap(action_prod());
+//what happens when you tap on it
 
 //inputs and controls
 $title_prod 	= new InputText(150);
@@ -61,7 +63,8 @@ function grid_load_products(){
 
 	$result_prod = $httpClient_prod -> Execute('GET',$url_prod);  //you get a JSON
 
-	$struct_prod = array(		//it's a list so you have an array of an array
+	//it's a list so you have an array of an array
+	$struct_prod = array(
 			array(
 					"id" => DataType::Numeric(6),
 					"name" => DataType::Character(150),
@@ -71,7 +74,8 @@ function grid_load_products(){
 			)
 	);
 
-	Data::FromJson($struct_prod,$result_prod); //does a merge of the structure you made and the json you got
+	Data::FromJson($struct_prod,$result_prod); 
+	//does a merge of the structure you made and the json you got
 
 	foreach ($struct_prod as $product){
 		$id_prod 	= $product['id'];
