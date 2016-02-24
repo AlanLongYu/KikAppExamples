@@ -62,38 +62,6 @@ function addContact(){
 	
 }
 
-function viewAllContact(){
-	/*		
-	$contacts = array(
-				"DisplayName" => type::Character(80),
-				"FirstName" => type::Character(40),
-				"LastName" => type::Character(80),
-				"EMail" => type::EMail(),
-				"Phone" => type::Phone(),
-				"CompanyName" => type::Character(80),
-				"Photo" => type::Image(),
-				"Note" => type::Character(80)												
-		);
-	*/
-	
-	$contacts = AddressBook::GetAllContacts();
-		
-}
 
-/*
- * Only iOS..
-function viewContact(){
-	AddressBook::ViewContact("Matias","Preciozzi","mpreciozzi@devxtend.com","099686098");
-}
-
-function removeContact(){
-	$isOk = new InputBoolean();
-	$isOk = AddressBook::removeContact("Matias","Preciozzi","mpreciozzi@devxtend.com","099686098","");
-	
-	if ($isOk == true){
-		echo "contacto eliminado";
-	}
-}
-*/
 
 ?>
