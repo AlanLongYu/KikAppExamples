@@ -10,6 +10,9 @@ $win -> setCaption("Horizontal Grid!");
 
 $mainTable = new Table();
 
+$actionBar = new ActionBar();
+$actionBar->setClass("applicationBars");
+
 $grid_home = new HorizontalGrid();
 $grid_home -> setRowsPerPagePortrait(1);
 $grid_home -> setShowPageController(false);
