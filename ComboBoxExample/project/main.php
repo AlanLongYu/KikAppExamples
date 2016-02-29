@@ -18,7 +18,7 @@ $button -> setCaption("Click me!");
 $button -> onTap(clickme());
 
 $combo_box= new ComboBox();
-$combo_box-> setEmptyItem("true");
+$combo_box-> setEmptyItem(true);
 $combo_box-> setEmptyItemText("Choose options");
 $combo_box-> setValues("Option 1:1, Option 2:2, Option 3:3");
 
