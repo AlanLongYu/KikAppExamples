@@ -6,7 +6,7 @@
 * @version 1.0 
 */
 
-define('_BLOB_PATH', "http://devxtend.com/nicolas/HorizontalGridExample/services/");
+define('_BLOB_PATH', "http://localhost/services/");
 define('_FOLDER',"PublicStorage/");
 
 $fileName = getName() .".".getExtension(getHeader("Content-Type"));
