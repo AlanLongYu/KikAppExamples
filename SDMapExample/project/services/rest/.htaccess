@@ -3,3 +3,7 @@ RewriteEngine on
 
 ##### htaccess version 1.0 #####
 
+RewriteRule ^detail_Level_Detail$ detail_Level_Detail.php [NC,L]
+RewriteRule ^main_Level_Detail$ main_Level_Detail.php [NC,L]
+RewriteRule ^main_Level_Detail_grid$ main_Level_Detail_grid.php [NC,L]
+

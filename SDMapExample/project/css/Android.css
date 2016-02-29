@@ -6,10 +6,11 @@
 application{
 	
 }
- 
 applicationBars{
-
+	background-color:"#32a3cb";
+	status-bar-color:"#4cbae3";
 }
+
  
 input{
 
