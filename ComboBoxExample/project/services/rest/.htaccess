@@ -1,0 +1,8 @@
+Options +FollowSymLinks
+RewriteEngine on
+
+##### htaccess version 1.0 #####
+
+RewriteRule ^main_Level_Detail$ main_Level_Detail.php [NC,L]
+RewriteRule ^main_Level_Detail_grid_home$ main_Level_Detail_grid_home.php [NC,L]
+
