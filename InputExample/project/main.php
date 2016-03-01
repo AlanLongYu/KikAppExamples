@@ -13,7 +13,6 @@ $tabMain = new Table();
 //Input text
 $input = new InputText();
 $input->setClass("input.Example");
-//$input->setValue("input text");
 
 //Button for action 
 $button = new Button();
@@ -27,7 +26,6 @@ $win->addControl($tabMain);
  
 function action(){
 	echo "Value: ".$input;
-	//echo "Value: ".$input->getValue();
 }
  
 ?>
