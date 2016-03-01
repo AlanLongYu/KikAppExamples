@@ -66,9 +66,6 @@ function load_places(){
 		
 }
 
-function start(){
-	//$win -> setCaption("mmm..");
-}
 
 function detail(){
 	$win -> Open("detail",$id,$title);
