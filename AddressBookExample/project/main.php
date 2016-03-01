@@ -54,7 +54,7 @@ $win -> addControl($mainTable);
 function addContact(){
 	$isOk = new InputBoolean();
 	$isOk= AddressBook::AddContact($input_name,$input_lastname,$input_email,$input_phone,$input_work,"",$input_message);
-	
+
 	if ($isOk == true){
 		echo "Contact added!";
 	}
