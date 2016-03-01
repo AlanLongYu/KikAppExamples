@@ -53,7 +53,6 @@ $win -> addControl($mainTable);
 
 function addContact(){
 	$isOk = new InputBoolean();
-	//$isOk = AddressBook::AddContact("Matias","Preciozzi","mpreciozzi@devxtend.com","099686098","DevXtend","","Mensaje por las dudas...");
 	$isOk= AddressBook::AddContact($input_name,$input_lastname,$input_email,$input_phone,$input_work,"",$input_message);
 	
 	if ($isOk == true){
