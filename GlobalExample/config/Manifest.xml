@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest>
+    <application generateAndroid="true" generateiOS="false">
+        <main>main.php</main>
+        <services>http://localhost/services/</services>
+    	<android layoutOrientation="Portrait" navigationStyle="Slide">   
+    	    <Theme>Android</Theme>     	
+        	<versionCode>1</versionCode>
+        	<versionName>1.0</versionName>
+        	<packagedName>com.kikapp.globalexample</packagedName>
+        	<lunchImage>lunchimage.png</lunchImage>
+        	<applicationIcon>appicon.png</applicationIcon>        	
+        	<applicationTitle>Global Example</applicationTitle>
+        	<!-- Android Maps API Key -->
+        	<MapAPIKey>AIzaSyDSajI2l5PtM8LnVguIiwRPQJjw8-CYREA</MapAPIKey>
+        	<!-- Adds -->
+        	<EnableAds>False</EnableAds>
+        	<AdsProvider/> <!-- AdMob - Mobfox - SmartAd -->
+        	<AdMobPublisherId/>
+        	<!-- Analytics -->
+        	<EnableAnalytics>False</EnableAnalytics>
+        	<GoogleAnalyticsTrackerId/>
+        	<!-- Twitter -->
+        	<TwitterAppKey/>
+        	<TwitterAppSecret/>
+        	<!-- Facebook -->
+        	<FacebookAppId>1666836676902508</FacebookAppId>
+        	<!-- YouTube -->
+        	<AndroidYoutubeAPIKey/>        	
+        </android>
+        <iOS layoutOrientation="Portrait" navigationStyle="Default">
+            <Theme>iOSTheme</Theme>
+        	<versionCode>1</versionCode>
+        	<versionName>1.0</versionName>
+        	<packagedName/>
+        	<applicationIcon/>
+        </iOS>
+       </application>	
+</manifest>

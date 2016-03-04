@@ -1,0 +1,9 @@
+Options +FollowSymLinks
+RewriteEngine on
+
+##### htaccess version 1.0 #####
+
+RewriteRule ^Map_Level_Detail/?$  Map_Level_Detail.php [NC]
+RewriteRule ^Map_Level_Detail_grid$ Map_Level_Detail_grid.php [NC,L]
+RewriteRule ^detail_Level_Detail/?$  detail_Level_Detail.php [NC]
+
