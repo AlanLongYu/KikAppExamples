@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest>
+    <application generateAndroid="true" generateiOS="false">
+        <main>main.php</main>
+        <services>http://localhost/services/</services>
+    	<android navigationStyle="Default" layoutOrientation="Portrait">   
+    	    <Theme>Android</Theme>     	
+        	<versionCode>1</versionCode>
+        	<versionName>1.0</versionName>
+        	<packagedName></packagedName>
+        	<lunchImage>lunchimage.png</lunchImage>
+        	<applicationIcon>appicon.png</applicationIcon>        	
+        	<applicationTitle>Hello World</applicationTitle>
+        	<!-- Android Maps API Key -->
+        	<MapAPIKey></MapAPIKey>    
+        	<!-- Adds -->
+        	<EnableAds>False</EnableAds>
+        	<AdsProvider></AdsProvider> <!-- AdMob - Mobfox - SmartAd -->
+        	<AdMobPublisherId></AdMobPublisherId>
+        	<!-- Analytics -->
+        	<EnableAnalytics>False</EnableAnalytics>
+        	<GoogleAnalyticsTrackerId></GoogleAnalyticsTrackerId>
+        	<!-- Twitter -->
+        	<TwitterAppKey></TwitterAppKey>
+        	<TwitterAppSecret></TwitterAppSecret>
+        	<!-- Facebook -->
+        	<FacebookAppId></FacebookAppId>
+        	<!-- YouTube -->
+        	<AndroidYoutubeAPIKey></AndroidYoutubeAPIKey>        	
+        </android>
+        <iOS navigationStyle="Default" layoutOrientation="Portrait">
+            <Theme>iOSTheme</Theme>
+        	<versionCode>1</versionCode>
+        	<versionName>1.0</versionName>
+        	<packagedName></packagedName>
+        	<applicationIcon></applicationIcon>
+        </iOS>
+       </application>	
+</manifest>
