@@ -1,0 +1,9 @@
+Options +FollowSymLinks
+RewriteEngine on
+
+##### htaccess version 1.0 #####
+
+RewriteRule ^main_Level_Detail/?$  main_Level_Detail.php [NC]
+RewriteRule ^main_load_data$ main_load_data.php [NC,L]
+RewriteRule ^sdsvc_main_Level_Detail/dc?$  sdsvc_main_Level_Detail.php [NC]
+
