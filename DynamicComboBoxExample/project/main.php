@@ -6,7 +6,7 @@
  */
 
 $win = new SDPanel();
-$win -> setCaption("Hello world!");
+$win -> setCaption("Dynamic Combo Box!");
 
 $actionBar = new ActionBar();
 $actionBar->setClass("applicationBars");
