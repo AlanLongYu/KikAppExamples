@@ -68,4 +68,17 @@ function sms() {
 	Interop::SendSMS($input_phone,$input_message);
 }
 
+function confirm() {
+	$isOk= new InputBoolean();
+	$isOk=Interop::Confirm("Are you sure you want to delete it?");
+	if($isOk == true){
+		ProgressIndicator::ShowWithTitle("Deleting");
+		$httpC = new httpClient();		
+		$httpC -> addVariable("Id",$id);
+		$httpC -> Execute('POST',"http://your_server.com/InteropExample/crud/deleteItem.php");
+		ProgressIndicator::Hide();
+		return;
+	}
+}
+
 ?>
