@@ -75,7 +75,7 @@ function confirm() {
 		ProgressIndicator::ShowWithTitle("Deleting");
 		$httpC = new httpClient();		
 		$httpC -> addVariable("Id",$id);
-		$httpC -> Execute('POST',"http://your_server.com/InteropExample/crud/deleteItem.php");
+		$httpC -> Execute('POST',"http://server.com/deleteItem.php");
 		ProgressIndicator::Hide();
 		return;
 	}
