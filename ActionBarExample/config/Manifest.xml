@@ -3,21 +3,44 @@
     <application generateAndroid="true" generateiOS="false">
         <main>main.php</main>
         <services>http://localhost/services/</services>
-    	<android navigationStyle="Default" layoutOrientation="Portrait">   
-    	    <Theme>Android</Theme>     	
-        	<versionCode>1</versionCode>
+		<applicationTitle>Hello World</applicationTitle>
+       	<!-- Adds -->
+       	<EnableAds></EnableAds> <!-- True - False -->
+       	<AdsProvider></AdsProvider> <!-- AdMob - Mobfox - SmartAd -->
+       	<!-- Analytics -->
+       	<EnableAnalytics></EnableAnalytics> <!-- True - False -->
+       	<GoogleAnalyticsTrackerId></GoogleAnalyticsTrackerId>
+       	<!-- Twitter -->
+       	<TwitterAppKey></TwitterAppKey>
+       	<TwitterAppSecret></TwitterAppSecret>
+       	<!-- Facebook -->
+       	<FacebookAppId></FacebookAppId>
+       	            	
+    	<android layoutOrientation="Portrait" navigationStyle="Default">   
+    	    <Theme>AndroidTheme</Theme>     	
+        	<versionCode>1.0</versionCode>
         	<versionName>1.0</versionName>
-        	<packagedName></packagedName>
+        	<packagedName>com.kikapp.actionbarexample</packagedName>
         	<lunchImage>lunchimage.png</lunchImage>
-        	<applicationIcon>appicon.png</applicationIcon>        	
-        	<applicationTitle>Hello World</applicationTitle>
+        	<applicationIcon>appicon.png</applicationIcon>    
+        	<BaseStyle>Light</BaseStyle> <!-- Default - Dark - Light - Light with Dark Action Bar -->
+        	<!-- AdMob Publisher Id -->
+        	<AdMobPublisherId></AdMobPublisherId>	
+        	<!-- Android Maps API Key -->
+        	<MapAPIKey></MapAPIKey>            	
+        	<!-- YouTube -->
+        	<AndroidYoutubeAPIKey></AndroidYoutubeAPIKey>        	
         </android>
-        <iOS navigationStyle="Default" layoutOrientation="Portrait">
+        
+        <iOS layoutOrientation="Portrait" navigationStyle="Default">
             <Theme>iOSTheme</Theme>
-        	<versionCode>1</versionCode>
+        	<versionCode>1.0</versionCode>
         	<versionName>1.0</versionName>
-        	<packagedName></packagedName>
-        	<applicationIcon></applicationIcon>
+        	<BundleIdentifier>com.kikapp.main</BundleIdentifier>
+        	<Devices>Universal</Devices> <!-- Universal - iPhone - iPad  -->
+        	<applicationIcon>lunchimage.png</applicationIcon>
+        	<lunchImage>lunchimage.png</lunchImage>
+        	<ExecuteType>KikAppEmulator</ExecuteType> <!-- Compile - KikAppEmulator -->
         </iOS>
        </application>	
 </manifest>
