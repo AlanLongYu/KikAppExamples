@@ -1,31 +1,39 @@
-<?php
-
+<?php 
 /**
- * Input control example.
- * mainInput.php
+ * Main object.
+ * @author Kikapp
+ * @version 1.0
  */
- 
+
 $win = new SDPanel();
-$win->setCaption("Input control");
- 
-$tabMain = new Table();
+$win -> setCaption("Hello world!");
 
-//Input text
-$input = new InputText();
-$input->setClass("input.Example");
+$mainTable = new Table();
+$mainTable-> setClass("table");
 
-//Button for action 
+$table= new Table()
+$table-> setClass("table.aux");
+
+$input= new InputText();
+$input-> setLabelCaption("Name:")
+$input-> setInviteMessage("Write your name")
+$input-> setClass("input");
+$input->setLabelPosition("Left");
+
 $button = new Button();
-$button->setCaption("Button");
-$button->setClass("button.Example");
-$button->onTap(action());
-  
-$tabMain->addControl($input,1,1);
-$tabMain->addControl($button,2,1);
-$win->addControl($tabMain);
- 
-function action(){
-	echo "Value: ".$input;
+$button -> setCaption("Click me!");
+$button -> onTap(clickme());
+$button-> setClass("button.blue");
+
+$table-> addControl($input,1,1);
+$table -> addControl($button,2,1);
+
+$mainTable-> addControl($table,1,1);
+
+$win -> addControl($mainTable);
+
+function clickme(){
+	echo "Your name is: ".$input;
 }
- 
+
 ?>

@@ -1,27 +1,104 @@
 /** 
- * Style for Android appliaction.
+ * Style for Android application.
  * @version 1.0
  */
 
-button.Example{	
+application{
+	action-tint-color: "#FFFFFF";
+}
+ 
+applicationBars{
+	background-color:"#32a3cb";
+	status-bar-color:"#4cbae3";
+	forecolor: "#FFFFFF";
+	
+}
+ 
+input{
+	font-family:"Roboto-Regular.ttf";
+	font-size:"24";
+	forecolor:"Black 79%";
+	label-class:"label.blue";
+}
+
+inputtitle{
+
+}
+  
+InputReadOnly{
+	
+}  
+
+button{
+
+}
+
+button.blue{
+	background-color:"#32a3cb";
 	font-weight:"bold";
-	forecolor:"#424242";
-	font-size:"17";
+	forecolor:"#FFFFFF";	
+	margin-top:15dip;
 	margin-left:8dip;
 	margin-right:8dip;
-	margin-top:10dip;
-	border-style:"Solid";
-	border-color:"#FE2E2E";
-	border-width:"1dip";
-	border-radius:"5dip";
-	background-color:"#BDBDBD";
+	margin-bottom:0dip;
+}
+  
+grid{
+	
+}  
+
+gridRow{
 	
 }
 
-input.Example{	
-	forecolor:"#424242";
-	font-size:"17";
-	margin-left:8dip;
-	margin-right:8dip;
-	background-color:"#FFFFFF";	
+gridRowEven{
+	
+}
+
+gridRowOdd{
+	
+}
+
+horizontalLine{
+	
+}
+
+image{
+	
+}
+
+label{
+	
+}
+
+label.blue {	
+	forecolor:"#32a3cb";
+	font-size:"24";	
+}
+
+sdPageController{
+	
+}
+
+tab{
+	
+}
+
+tabPage{
+	
+}
+
+tabPageSelected{
+	
+}
+
+tabPageUnSelected{
+	
+}
+
+table{
+ 	background-color: "#FFFFFF";
+}
+table.aux{
+	margin-top: 15dip;
 }

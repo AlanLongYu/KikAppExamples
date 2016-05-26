@@ -1,7 +1,8 @@
 <?php
 
 /*
- * Copyright 2015 Gecko
+ * Copyright 2015 KikApp
+ * @version 0.1.1
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,428 +17,441 @@
  * limitations under the License.
  */
 
+class HttpClient {
 
-//http://codular.com/curl-with-php
-//http://coreymaynard.com/blog/creating-a-restful-api-with-php/
+	private $curl;
+	private $error = null;
 
-class HttpClient{
+	protected static $_JSON_messages = array(JSON_ERROR_NONE => 'No error has occurred', JSON_ERROR_DEPTH => 'The maximum stack depth has been exceeded', JSON_ERROR_STATE_MISMATCH => 'Invalid or malformed JSON', JSON_ERROR_CTRL_CHAR => 'Control character error, possibly incorrectly encoded', JSON_ERROR_SYNTAX => 'Syntax error', JSON_ERROR_UTF8 => 'Malformed UTF-8 characters, possibly incorrectly encoded. You should use utf8_encode().');
 
-    private $curl;
-    private $error = null;
+	public static function getInstance() {
+		static $instance = null;
+		if (null === $instance) {
+			$instance = new static();
+		}
 
-    protected static $_JSON_messages = array(
-        JSON_ERROR_NONE => 'No error has occurred',
-        JSON_ERROR_DEPTH => 'The maximum stack depth has been exceeded',
-        JSON_ERROR_STATE_MISMATCH => 'Invalid or malformed JSON',
-        JSON_ERROR_CTRL_CHAR => 'Control character error, possibly incorrectly encoded',
-        JSON_ERROR_SYNTAX => 'Syntax error',
-        JSON_ERROR_UTF8 => 'Malformed UTF-8 characters, possibly incorrectly encoded. You should use utf8_encode().'
-    );
+		return $instance;
+	}
 
-    public static function getInstance()
-    {
-        static $instance = null;
-        if (null === $instance) {
-            $instance = new static();
-        }
+	protected function __construct() {
+		$this -> curl = curl_init();
+	}
 
-        return $instance;
-    }
+	function __destruct() {
+		curl_close($this -> curl);
+	}
 
-    protected function __construct(){
-        $this->curl = curl_init();
-    }
+	/**
+	 * Create a http request
+	 *
+	 * @access public
+	 * @since 1.0
+	 * @param string $method
+	 * @param string $url
+	 * @param array $data
+	 * @return array
+	 */
 
-    function __destruct(){
-        curl_close($this->curl);
-    }
+	public function getURL($method, $url, $data = false) {
 
-    /**
-     * Create a http request
-     *
-     * @access public
-     * @since 1.0
-     * @param string $method
-     * @param string $url
-     * @param array $data
-     * @return array
-     */
+		$curl = $this -> curl;
 
-    public function getURL($method, $url, $data = false){
-        
-        $curl = $this->curl;
+		switch ($method) {
+			case "POST" :
+				curl_setopt($curl, CURLOPT_POST, 1);
+				if ($data) {
+					curl_setopt($curl, CURLOPT_POSTFIELDS, $this -> _cleanInputs($data));
+				}
+				break;
+			case "PUT" :
+				curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "PUT");
+				if ($data) {
+					curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($this -> _cleanInputs($data)));
+				}
+				break;
+			case "DELETE" :
+				curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "DELETE");
+				if ($data) {
+					curl_setopt($curl, CURLOPT_POSTFIELDS, $this -> _cleanInputs($data));
+				}
+				break;
+			case "GET" :
+				$url = sprintf("%s?%s", $url, http_build_query($this -> _cleanInputs($data)));
+				break;
 
-        switch ($method)
-        {
-            case "POST":
-                curl_setopt($curl, CURLOPT_POST, 1);
-                if ($data){
-                    curl_setopt($curl, CURLOPT_POSTFIELDS, $this->_cleanInputs($data));
-                }
-                break;
-            case "PUT":                
-                curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "PUT");
-                if ($data){
-                    curl_setopt($curl, CURLOPT_POSTFIELDS,http_build_query($this->_cleanInputs($data)));
-                }
-                break;
-            case "DELETE":
-                curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "DELETE");
-                if ($data){
-                    curl_setopt($curl, CURLOPT_POSTFIELDS, $this->_cleanInputs($data));
-                }
-                break;
-            case "GET":
-                $url = sprintf("%s?%s", $url, http_build_query($this->_cleanInputs($data)));                
-                break;
-                      
-            default:
-                $this->setError('Invalid Method', 405);                
-                break;
-        }
+			default :
+				$this -> setError('Invalid Method', 405);
+				break;
+		}
 
-        // Optional Authentication:
-        //curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-        //curl_setopt($curl, CURLOPT_USERPWD, "username:password");
-        if(is_null($this->getError())){
+		if (is_null($this -> getError())) {
 
-            curl_setopt($curl, CURLOPT_URL, $url);
-            curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-            $result = curl_exec($curl);    
+			curl_setopt($curl, CURLOPT_URL, $url);
+			curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+			$result = curl_exec($curl);
 
-            if ($result === false){
-                $info = curl_getinfo($curl);
-                $this->setError('Error: "' . curl_error($curl) . '" - Code: ' . curl_errno($curl));
-                //' Error occured during curl exec ' . var_export($info)
-                return false;
-            }else{
-                
-                return $result;
-            }
-        }
-    }
+			if ($result === false) {
+				$info = curl_getinfo($curl);
+				$this -> setError('Error: "' . curl_error($curl) . '" - Code: ' . curl_errno($curl));
+				return false;
+			} else {
 
-    public function getHeaders($url){
-        
-        // Create a curl handle
-        $ch = $this->curl;
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_HEADER, true);    // we want headers
+				return $result;
+			}
+		}
+	}
 
-        // Execute
-        curl_exec($ch);
+	private function _cleanInputs($data) {
+		$clean_input = Array();
+		if (is_array($data)) {
+			foreach ($data as $k => $v) {
+				$clean_input[$k] = $this -> _cleanInputs($v);
+			}
+		} else {
+			$clean_input = trim(strip_tags($data));
+		}
+		return $clean_input;
+	}
 
-        // Check if any error occurred
-        if(!curl_errno($ch)){
-             $info = curl_getinfo($ch);
-             $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);             
-             return /*'Took ' . $info['total_time'] . ' seconds to send a request to ' . $info['url'] . ' with response code '.$httpcode.*/$info;
-             
-        }
+	public function getHeaders($url) {
 
-         //Close handle
-        //curl_close($ch);
-    }
+		// Create a curl handle
+		$ch = $this -> curl;
+		curl_setopt($ch, CURLOPT_URL, $url);
+		curl_setopt($ch, CURLOPT_HEADER, true);
 
-    public function setHeaders($headers){
-        /*
-        $headers = array();
-        $headers[] = 'X-Apple-Tz: 0';
-        $headers[] = 'X-Apple-Store-Front: 143444,12';
-        $headers[] = 'Accept: text/html,application/xhtml+xml,application/xml';
-        $headers[] = 'Accept-Encoding: gzip, deflate';
-        $headers[] = 'Accept-Language: en-US,en;q=0.5';
-        $headers[] = 'Cache-Control: no-cache';
-        $headers[] = 'Content-Type: application/x-www-form-urlencoded; charset=utf-8';
-        $headers[] = 'Host: www.example.com';
-        $headers[] = 'Referer: http://www.example.com/index.php'; //Your referrer address
-        $headers[] = 'User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:28.0) Gecko/20100101 Firefox/28.0';
-        $headers[] = 'X-MicrosoftAjax: Delta=true';
-        
-		*/ 
-		curl_setopt($this->curl, CURLOPT_HTTPHEADER, $headers);
-        
-    }
+		// Execute
+		curl_exec($ch);
 
+		// Check if any error occurred
+		if (!curl_errno($ch)) {
+			$info = curl_getinfo($ch);
+			$httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+			return $info;
 
-     /**
-     * Recursive renameJsonKeys of json keys
-     *
-     * @access public
-     * @since 1.0
-     * @param array $matriz, original array
-     * @param string $padre
-     * @param array $merge, new key values
-     * @return array
-     */
+		}
 
-    public function renameJsonKeys($matriz, $padre=null, $merge, &$array){
+		//Close handle
+		curl_close($ch);
+	}
 
-        if(!empty($matriz)){
+	public function setHeaders($headers) {
+		/*
+		 $headers = array();
+		 $headers[] = 'X-Apple-Tz: 0';
+		 $headers[] = 'X-Apple-Store-Front: 143444,12';
+		 $headers[] = 'Accept: text/html,application/xhtml+xml,application/xml';
+		 $headers[] = 'Accept-Encoding: gzip, deflate';
+		 $headers[] = 'Accept-Language: en-US,en;q=0.5';
+		 $headers[] = 'Cache-Control: no-cache';
+		 $headers[] = 'Content-Type: application/x-www-form-urlencoded; charset=utf-8';
+		 $headers[] = 'Host: www.example.com';
+		 $headers[] = 'Referer: http://www.example.com/index.php'; //Your referrer address
+		 $headers[] = 'User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:28.0) Gecko/20100101 Firefox/28.0';
+		 $headers[] = 'X-MicrosoftAjax: Delta=true';
+		 */
+		curl_setopt($this -> curl, CURLOPT_HTTPHEADER, $headers);
 
-            foreach($matriz as $key=>$value){
-                if (is_array($value)){  //si es un array sigo recorriendo                                               
-                    $this->renameJsonKeys($value,$key,$merge, $array);
+	}
 
-                }else{  //si es un elemento lo cambio
+	/**
+	 * Recursive renameJsonKeys of json keys
+	 *
+	 * @access public
+	 * @since 1.0
+	 * @param array $originalArray, given array
+	 * @param string $mainElement, useful for recursion
+	 * @param array $merge, new key values
+	 * @return array $returnArray, result of recursive rename
+	 */
+	public function renameJsonKeys($originalArray, $mainElement = null, $merge, &$returnArray) {
 
-                    if(!is_null($padre)){
+		if (!empty($originalArray)) {
 
-                        if(array_key_exists($key, $merge)){                 
-                            $array[$padre][$merge[$key]] = $value;  
-                        }else{
-                            $array[$padre][$key] = $value;  
-                        }
-                            
-                    }else{
+			foreach ($originalArray as $key => $value) {
 
-                        if(array_key_exists($key, $merge)){                 
-                            $array[$merge[$key]] = $value;  
-                        }else{
-                            $array[$key] = $value;  
-                        }
+				if (is_array($value)) {//if is array, recursion continue
+					$this -> renameJsonKeys($value, $key, $merge, $returnArray);
 
-                    }
+				} else {//if is an element, raname it
 
-                    
-                }
+					if (!is_null($mainElement)) {
 
-            }
-            
-        }
+						if (array_key_exists($key, $merge)) {
+							$returnArray[$mainElement][ucfirst($merge[$key])] = $value;
+						} else {
+							$returnArray[$mainElement][$key] = $value;
+						}
 
-    }
+					} else {
 
-    /**
-     * Paginate json
-     *
-     * @access public
-     * @since 1.0
-     * @param int $start
-     * @param int $count
-     * @param array $result     
-     */
+						if (array_key_exists($key, $merge)) {
+							$returnArray[($merge[$key])] = $value;
+						} else {
+							$returnArray[$key] = $value;
+						}
 
-    public function paginate($start, $count, &$result){
-        if($start!='' && $count!=''){
-            $result = array_slice($result, $start, $count, false);    
-        }        
-    }
-    
+					}
 
-    /**
-     * Recursive search in json
-     *
-     * @access public
-     * @since 1.0
-     * @param array $array, original array
-     * @param array $key, array of keys to find
-     * @param data $value, value to find
-     * @return array with elements found
-     */
+				}
 
-    public function search($array, $key, $value){
-        $results = array();
-        if(!empty($key) && $value!=''){            
-            $this->search_r($array, $key, $value, $results);
-            return $results;
-        }else{
-            return $array;
-        }     
-        
-    }
+			}
 
-    public function search_r($array, $key, $value, &$results){
-        if (!is_array($array)) {
-            return;
-        }
+		}
 
-        foreach ($key as $keyIndex=>$keyValue) {
+	}
 
-            if (isset($array[$keyValue]) && !in_array($array, $results) ){
-                
-                $encuentra = strpos(strtolower($array[$keyValue]), strtolower($value));
-                if ((strtolower($array[$keyValue]) == strtolower($value) || $encuentra!==false)) {
-                    $results[] = $array;
-                }
+	/**
+	 * Paginate json
+	 *
+	 * @access public
+	 * @since 1.0
+	 * @param int $start
+	 * @param int $count
+	 * @param array $returnArray
+	 */
 
-            }
-        }
-        foreach ($array as $subarray) {
-            $this->search_r($subarray, $key, $value, $results);
-        }
-    }
+	public function paginate($start, $count, &$returnArray) {
+		if ($start != '' && $count != '') {
+			$returnArray = array_slice($returnArray, $start, $count, false);
+		}
+	}
 
-    private function _cleanInputs($data) {
-        $clean_input = Array();
-        if (is_array($data)) {
-            foreach ($data as $k => $v) {
-                $clean_input[$k] = $this->_cleanInputs($v);
-            }
-        } else {
-            $clean_input = trim(strip_tags($data));
-        }
-        return $clean_input;
-    }
+	/**
+	 * Recursive search in json
+	 *
+	 * @access public
+	 * @since 1.0
+	 * @param array $array, original array
+	 * @param array $key, array of keys to find
+	 * @param data $value, value to find
+	 * @return array with elements found
+	 */
 
-    public function setError($errorMsg){
-        $this->error = $errorMsg;
-    }
+	public function search($array, $key, $value) {
+		$results = array();
+		if (!empty($key) && $value != '') {
+			$this -> search_r($array, $key, $value, $results);
+			return $results;
+		} else {
+			return $array;
+		}
 
-    public function getError(){
-        return $this->error;
-    }
+	}
 
-    /**
-     * String Json decode
-     *
-     * @access public
-     * @since 1.0
-     * @param string $string, string to decode     
-     * @return string decoded
-     */
+	public function search_r($array, $key, $value, &$results) {
+		if (!is_array($array)) {
+			return;
+		}
 
-    public function jsonDecode(&$string)
-    {
-        $string = json_decode($string, true);
-        if($string){
-            return;
-        }
-        echo __FUNCTION__.">".static::$_JSON_messages[json_last_error()];
-        
-    }
+		foreach ($key as $keyIndex => $keyValue) {
 
+			if (isset($array[$keyValue]) && !in_array($array, $results)) {
 
-    /**
-     * String Json encode
-     *
-     * @access public
-     * @since 1.0
-     * @param string $string, string to encode     
-     * @return string decoded
-     */
+				$found = strpos(strtolower($array[$keyValue]), strtolower($value));
+				if ((strtolower($array[$keyValue]) == strtolower($value) || $found !== false)) {
+					$results[] = $array;
+				}
 
-    public function jsonEncode(&$string){
-        $string = json_encode($string, true);
-        $string = str_replace("\\","", $string);
+			}
+		}
+		foreach ($array as $subarray) {
+			$this -> search_r($subarray, $key, $value, $results);
+		}
+	}
 
-        if($string){
-            return;
-        }
-        echo __FUNCTION__.">".static::$_JSON_messages[json_last_error()];
-    }
+	public function setError($errorMsg) {
+		$this -> error = $errorMsg;
+	}
 
+	public function getError() {
+		return $this -> error;
+	}
+
+	/**
+	 * String Json decode
+	 *
+	 * @access public
+	 * @since 1.0
+	 * @param string $string, string to decode
+	 * @return string decoded
+	 */
+
+	public function jsonDecode(&$string) {
+		$string = json_decode($string, true);
+		if ($string) {
+			return;
+		}
+		echo __FUNCTION__ . ">" . static::$_JSON_messages[json_last_error()];
+
+	}
+
+	/**
+	 * String Json encode
+	 *
+	 * @access public
+	 * @since 1.0
+	 * @param string $string, string to encode
+	 * @return string decoded
+	 */
+
+	public function jsonEncode(&$string) {
+		$string = json_encode($string, true);
+		$string = str_replace("\\", "", $string);
+		if ($string) {
+			return;
+		}
+		echo __FUNCTION__ . ">" . static::$_JSON_messages[json_last_error()];
+	}
 
 }
 
+function recorridaRecursiva($matriz, $padre = null, $GXDynPropConditions, $GXDynPropActions, &$array, $ultimo) {
 
-function recorridaRecursiva($matriz, $padre=null, $GXDynPropConditions, $GXDynPropActions, &$array, $ultimo){
+	if (!empty($matriz)) {
 
-        if(!empty($matriz)){
+		foreach ($matriz as $key => $value) {
+			if (is_array($value)) {//si es un array sigo recorriendo
+				$condiciones = array();
+				recorridaRecursiva($value, $key, $GXDynPropConditions, $GXDynPropActions, $array, getLastKey($value));
 
-            foreach($matriz as $key=>$value){
-                if (is_array($value)){  //si es un array sigo recorriendo     
-                    $condiciones = array();
-                    recorridaRecursiva($value, $key, $GXDynPropConditions, $GXDynPropActions, $array, darUltimaClave($value));
+			} else {//si es un elemento lo cambio
 
-                }else{  //si es un elemento lo cambio                   
+				if (!is_null($padre)) {
 
-                    if(!is_null($padre)){
+					$array[$padre][$key] = $value;
+					foreach ($GXDynPropConditions as $GXDPkey => $GXDPvalue) {
 
-                        $array[$padre][$key] = $value;                      
-                        foreach($GXDynPropConditions as $GXDPkey => $GXDPvalue) {
+						if (array_key_exists($key, $GXDPvalue)) {
 
-                            if(array_key_exists($key, $GXDPvalue)){
+							echo "<br> va a evaluar en " . $GXDPkey . " " . $key . " " . $value . " " . $GXDPvalue[$key]['logic_operator'] . " " . $value . $GXDPvalue[$key]['operator'] . $GXDPvalue[$key]['value'];
 
-                                echo "<br> va a evaluar en ".$GXDPkey." ".$key." ".$value." ".$GXDPvalue[$key]['logic_operator']." ".$value.$GXDPvalue[$key]['operator'].$GXDPvalue[$key]['value'];
+							$condiciones[] = array('oper' => $GXDPvalue[$key]['logic_operator'], 'cond' => (stringEvaluator($value, $GXDPvalue[$key]['value'], $GXDPvalue[$key]['operator']) == 1) ? 1 : 0);
+						}
 
-                                $condiciones[] = array(
-                                                        'oper' => $GXDPvalue[$key]['logic_operator'],
-                                                        'cond' => (stringEvaluator($value,$GXDPvalue[$key]['value'],$GXDPvalue[$key]['operator'])==1)?1:0 
-                                                );
-                            }
+						if ($ultimo == $key && !empty($condiciones)) {
 
-                            if($ultimo==$key && !empty($condiciones)){
+							if (conditionEvaluator($condiciones) == 1) {
+								$array[$padre]['Gxdynprop'] = $GXDynPropActions[$GXDPkey];
+							} else {
+								$array[$padre]['Gxdynprop'] = array();
+							}
 
-                                if(conditionEvaluator($condiciones)==1){
-                                    $array[$padre]['Gxdynprop'] = $GXDynPropActions[$GXDPkey];  
-                                }else{
-                                    $array[$padre]['Gxdynprop'] = array();
-                                }
-                                
-                                $condiciones = array();
-                            }
+							$condiciones = array();
+						}
 
-                            echo "<br>*** termino de correr".$GXDPkey;
+						echo "<br>*** termino de correr" . $GXDPkey;
 
-                        }
+					}
 
+				}
 
-                            
-                    }
-                    
-                }
+			}
 
-            }
-            
-        }
+		}
 
-    }
+	}
 
-    function darUltimaClave($array){
-        end($array);
-        return key($array);
-    }
+}
 
-    
-    function conditionEvaluator($condition){ //Sirve para evaluar las condiciones generadas recursivamente
+/**
+ * getLastKey - return the las element key of array
+ *
+ * @access public
+ * @since 1.0
+ * @param array $array
+ * @return string
+ */
 
-        $aux = '';
-        foreach ($condition as $key => $value) {
-            //si el operador logico no es nulo, es porque hay un valor anterior, tomo ese valor + el op logico y el valor actual y uso stringEvaluator
-            if(!is_null($value['oper'])){
-                $aux=(stringEvaluator($aux,intval($value['cond']),$value['oper'])==1)?1:0;
-            }else{
-                $aux=intval($value['cond']);
-            }           
-                        
-        }
-        return $aux;
-        
-    }
+function getLastKey($array) {
+	end($array);
+	return key($array);
+}
 
+/**
+ * conditionEvaluator - used to evaluate recursive conditionals
+ *
+ * @access public
+ * @since 1.0
+ * @param string $condition
+ * @return int(boolean)
+ */
 
-    function stringEvaluator($val_1,$val_2,$operator){ //Sirve para evaluar cada condicion individualmente
-        
-        $value = false;
+function conditionEvaluator($condition) {
 
-        switch ($operator) {
-            case '==':
-                $value = ($val_1 == $val_2);
-                break;
-            
-            case '!=':
-                $value = ($val_1 != $val_2);
-                break;
+	$aux = '';
+	foreach ($condition as $key => $value) {
+		//if operator is null means that exist a prev value,
+		//take the + and the logic operator and the current value
+		//and use stringEvaluator
+		if (!is_null($value['oper'])) {
+			$aux = (stringEvaluator($aux, intval($value['cond']), $value['oper']) == 1) ? 1 : 0;
+		} else {
+			$aux = intval($value['cond']);
+		}
 
-            case '>':
-                $value = ( $val_1 > $val_2);
-                break;
+	}
+	return $aux;
 
-            case '<':
-                $value = ( $val_1 < $val_2);
-                break;
-            case '&&':
-                $value = ( $val_1 && $val_2);
-                break;  
-            case '||':
-                $value = ( $val_1 || $val_2);
-                break;
-        }
+}
 
-        return intval($value);
+/**
+ * stringEvaluator - used to evaluate conditionals for dynamic properties
+ *
+ * @access public
+ * @since 1.0
+ * @param string $firstValue, string $secondValue, string $operator
+ * @return int(boolean)
+ */
+ 
+function stringEvaluator($firstValue, $val_2, $operator) {
 
-    }
+	$returnValue = false;
 
+	switch ($operator) {
+		case '==' :
+			$returnValue = ($firstValue == $secondValue);
+			break;
+
+		case '!=' :
+			$returnValue = ($firstValue != $secondValue);
+			break;
+
+		case '>' :
+			$returnValue = ($firstValue > $secondValue);
+			break;
+
+		case '<' :
+			$returnValue = ($firstValue < $secondValue);
+			break;
+		case '&&' :
+			$returnValue = ($firstValue && $secondValue);
+			break;
+		case '||' :
+			$returnValue = ($firstValue || $secondValue);
+			break;
+	}
+
+	return intval($returnValue);
+
+}
+
+/**
+ * Create services for Dynamic Combo Box.
+ * @access public
+ * @since 1.0
+ * @param array $array, original array
+ * @param array $key, name of key
+ * @param data $val, name to value
+ * @return String with elements found
+ */
+function createSvc($result, $key, $val) {
+	$print = "[";
+	foreach ($result as $value) {
+		$print .= "[\"" . $value -> $key . "\"" . ",\"" . $value -> $val . "\"],";
+	}
+	$print .= "]";
+	return $print;
+}
 
 ?>
