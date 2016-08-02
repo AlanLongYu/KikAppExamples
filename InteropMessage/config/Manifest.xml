@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest>
+    <application generateAndroid="true" generateiOS="false">
+        <main>main.php</main>
+        <services>http://localhost/services/</services>
+        <applicationTitle>Hello World</applicationTitle>    	
+       	<!-- Adds -->
+       	<EnableAds/> <!-- True - False -->
+       	<AdsProvider/> <!-- AdMob - Mobfox - SmartAd -->
+       	<!-- Analytics -->
+       	<EnableAnalytics/> <!-- True - False -->
+       	<GoogleAnalyticsTrackerId/>
+       	<!-- Twitter -->
+       	<TwitterAppKey/>
+       	<TwitterAppSecret/>
+       	<!-- Facebook -->
+       	<FacebookAppId/>
+       	            	
+    	<android layoutOrientation="Portrait" navigationStyle="Default">   
+    	    <Theme>Android</Theme>     	
+        	<versionCode>1.0</versionCode>
+        	<versionName>1.0</versionName>
+        	<packagedName>com.kikapp.interopmessage</packagedName>
+        	<lunchImage>launchimage.png</lunchImage>
+        	<applicationIcon>appicon.png</applicationIcon>
+        	<BaseStyle/> <!-- Default - Dark - Light - Light with Dark Action Bar -->
+        	<!-- AdMob Publisher Id -->
+        	<AdMobPublisherId/>	
+        	<!-- Android Maps API Key -->
+        	<MapAPIKey/>            	
+        	<!-- YouTube -->
+        	<AndroidYoutubeAPIKey/>        	
+        </android>
+        
+        <iOS layoutOrientation="Portrait" navigationStyle="Default">
+            <Theme>iOSTheme</Theme>
+        	<versionCode>1.0</versionCode>
+        	<versionName>1.0</versionName>
+        	<BundleIdentifier>com.kikapp.interopmessage</BundleIdentifier>
+        	<Devices>Universal</Devices> <!-- Universal - iPhone - iPad  -->
+        	<applicationIcon>appicon.png</applicationIcon>
+        	<lunchImage>launchimage.png</lunchImage>
+        	<ExecuteType>KikAppEmulator</ExecuteType> <!-- Compile - KikAppEmulator -->
+        </iOS>
+        
+       </application>	
+</manifest>
