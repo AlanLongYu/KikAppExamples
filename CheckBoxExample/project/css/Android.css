@@ -25,9 +25,20 @@ InputReadOnly{
 }  
 
 button{
-
+	font-family:"Roboto-Regular.ttf";
+ 	font-size:"14";		
 }
-  
+
+button.blue{
+	background-color:#00FFFF;
+	font-weight:"bold";
+	forecolor:"#FFFFFF";	
+	font-size:"18";
+	margin-top:15dip;
+	margin-left:0dip;
+	margin-right:0dip;
+	margin-bottom:0dip;
+} 
 grid{
 	
 }  
@@ -51,9 +62,27 @@ horizontalLine{
 image{
 	
 }
+image.menu {	
+	margin-right:5dip;
+	width:"34dip";
+	height:"34dip";		
+	scale-type: "scaleToFill";	
+}
 
 label{
-	
+	font-family:"Roboto-Regular.ttf";
+ 	font-size:"16";
+ 	forecolor:"#FFFFFF";	
+}
+
+label.MenuOption {
+	font-family:"Roboto-Regular.ttf";
+ 	font-size:"17";	
+ 	forecolor:"#ffffff 95%";
+ 	background-color:"";
+}
+label.Home {
+	font-size:"20";
 }
 
 sdPageController{
@@ -77,5 +106,15 @@ tabPageUnSelected{
 }
 
 table{
- 	
+	margin-bottom:0dip;
+	margin-top:0dip;
+	margin-left:0dip;	
+	margin-right:0dip;	
+	background-color:"";
+}
+table.MenuOption{
+	margin-bottom:5dip;
+	margin-top:5dip;
+	margin-left:5dip;	
+	margin-right:5dip;
 }
