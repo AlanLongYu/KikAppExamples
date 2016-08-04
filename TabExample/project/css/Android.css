@@ -26,9 +26,10 @@ InputReadOnly{
 	
 }  
 
+button{
 
-
-
+}
+  
 grid{
 	
 }  
@@ -62,9 +63,7 @@ sdPageController{
 }
 
 tab{
-	Tab-Strip-Background-Color:#0000ff;
-	Tab-Strip-Indicator-color:"Gainsboro";
-	Tab-Strip-Separator-Color:#DBDBDB;
+	
 }
 
 tabPage{
@@ -78,6 +77,7 @@ tabPageSelected{
 tabPageUnSelected{
 	
 }
+
 
 table{
  	background-color:"#000000";

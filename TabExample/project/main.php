@@ -16,43 +16,34 @@ $mainTable = new Table();
 
 $tab= new Tab();
 $tab-> setVisible(true);
-$tab-> setClass("tab");
+//$tab-> setClass("tab");
 
-$item1= new TabItem();
-$item1-> setCaption("Item 1");
+$item1 = new TabItem();
+$item1 -> setCaption("Tab 1");
 
-$item2= new TabItem();
-$item2-> setCaption("Item 2");
+$item2 = new TabItem();
+$item2 -> setCaption("Tab2 2");
 
-$tableItem1= new Table();
-$tableItem2= new Table();
+$tableItem1 = new Table();
+$tableItem2 = new Table();
 
-$input1= new InputText();
-$input1-> setLabelCaption("Write your name");
+$label1 = new Label();
+$label1 -> setCaption("Label Tab 1");
 
-$input2= new InputText();
-$input2-> setLabelCaption("Write your age");
+$label2 = new Label();
+$label2 -> setCaption("Label Tab 2");
 
-$button1= new Button();
-$button1-> setCaption("Submit");
-$button1-> onTap(submit());
+$tableItem1 -> addControl($label1,1,1);
 
-$tableItem1->addControl($input1,2,1);
-$tableItem1->addControl($input2,3,1);
-$tableItem1->addControl($button1,4,1);
+$tableItem2 -> addControl($label2,1,1);
 
+$item1 -> addControl($tableItem1);
+$item2 -> addControl($tableItem2);
 
-$item1-> addControl($tableItem1);
-$item2-> addControl($tableItem2);
+$tab -> addTab($item1);
+$tab -> addTab($item2);
 
-$tab-> addTab($item1);
-$tab-> addTab($item2);
-
-$mainTable-> addControl($tab);
-$win-> addControl($actionBar);
-$win-> addControl($mainTable);
-
-function submit() {
- echo "Your name is ".$input1." and you are ".$input2." years old!";
-}
+$mainTable -> addControl($tab);
+$win -> addControl($actionBar);
+$win -> addControl($mainTable);
 ?>
