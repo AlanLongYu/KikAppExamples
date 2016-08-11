@@ -46,17 +46,15 @@ $mainTable -> addControl($button,5,1);
 $win -> addControl($mainTable);
 
 function clickme(){
-/*	$date_ini = new InputDate();
-	$date_ini -> setValue("21/12/2015");
-
-	$date_end = new InputDate();
-	$date_end -> setValue("21/12/2015");	
-
-	//date_format($date, 'Y-m-d H:i:s'); */
 	
-	Calendar::Schedule($input_title,$date_ini,$date_end,"10:00:01","11:05:00",$input_place);	
+	Calendar::Schedule(
+		$input_title,
+		$date_ini,
+		$date_end,
+		"10:00:01",
+		"11:05:00",
+		$input_place);	
 
 }
-
 
 ?>
