@@ -6,7 +6,7 @@
 * @version 1.0 
 */
 
-define('_BLOB_PATH', "http://www.devxtend.com/nicolas/GridExample/services/");
+define('_BLOB_PATH', "http://demo.kikapptools.com/HttpClientEjemplo/services/");
 define('_FOLDER',"PublicStorage/");
 
 $fileName = getName() .".".getExtension(getHeader("Content-Type"));

@@ -1,20 +1,19 @@
-<?xml version="1.0" encoding="utf-8"?>
-<manifest>
-    <application generateAndroid="true" generateiOS="false">
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest>
+    <application generateAndroid="true" generateiOS="false" version="39.0">
         <main>main.php</main>
-        <services>http://www.devxtend.com/nicolas/GridExample/services/</services>
+        <services>http://demo.kikapptools.com/HttpClientEjemplo/services/</services>
         <applicationTitle>Hello World</applicationTitle>
        	<!-- Adds -->
-       	<EnableAds></EnableAds> <!-- True - False -->
-       	<AdsProvider></AdsProvider> <!-- AdMob - Mobfox - SmartAd -->
+       	<EnableAds/> <!-- True - False -->
+       	<AdsProvider/> <!-- AdMob - Mobfox - SmartAd -->
        	<!-- Analytics -->
-       	<EnableAnalytics></EnableAnalytics> <!-- True - False -->
-       	<GoogleAnalyticsTrackerId></GoogleAnalyticsTrackerId>
+       	<EnableAnalytics/> <!-- True - False -->
+       	<GoogleAnalyticsTrackerId/>
        	<!-- Twitter -->
-       	<TwitterAppKey></TwitterAppKey>
-       	<TwitterAppSecret></TwitterAppSecret>
+       	<TwitterAppKey/>
+       	<TwitterAppSecret/>
        	<!-- Facebook -->
-       	<FacebookAppId></FacebookAppId>
+       	<FacebookAppId/>
        	            	
     	<android layoutOrientation="Portrait" navigationStyle="Default">   
     	    <Theme>AndroidTheme</Theme>     	
@@ -25,12 +24,12 @@
         	<applicationIcon>appicon.png</applicationIcon>
         	<BaseStyle>Light</BaseStyle> <!-- Default - Dark - Light - Light with Dark Action Bar -->
         	<!-- AdMob Publisher Id -->
-        	<AdMobPublisherId></AdMobPublisherId>	
+        	<AdMobPublisherId/>	
         	<!-- Android Maps API Key -->
-        	<MapAPIKey></MapAPIKey>            	
+        	<MapAPIKey/>            	
         	<!-- YouTube -->
-        	<AndroidYoutubeAPIKey></AndroidYoutubeAPIKey>        	
-        </android>
+        	<AndroidYoutubeAPIKey/>        	
+        <AndroidSenderId/><AndroidSenderAPIKey/></android>
         
         <iOS layoutOrientation="Portrait" navigationStyle="Default">
             <Theme>iOSTheme</Theme>
@@ -41,6 +40,6 @@
         	<applicationIcon>lunchimage.png</applicationIcon>
         	<lunchImage>lunchimage.png</lunchImage>
         	<ExecuteType>KikAppEmulator</ExecuteType> <!-- Compile - KikAppEmulator -->
-        </iOS>
-       </application>	
-</manifest>			
+        <LocationAlwaysUsage/><LocationWhenInUseUsage/><AllowsArbitraryLoads/></iOS>
+       <EnableNotification/></application>	
+</manifest>
