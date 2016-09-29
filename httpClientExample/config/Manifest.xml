@@ -29,7 +29,9 @@
         	<MapAPIKey/>            	
         	<!-- YouTube -->
         	<AndroidYoutubeAPIKey/>        	
-        <AndroidSenderId/><AndroidSenderAPIKey/></android>
+            <AndroidSenderId/>
+            <AndroidSenderAPIKey/>
+        </android>
         
         <iOS layoutOrientation="Portrait" navigationStyle="Default">
             <Theme>iOSTheme</Theme>
@@ -40,6 +42,10 @@
         	<applicationIcon>lunchimage.png</applicationIcon>
         	<lunchImage>lunchimage.png</lunchImage>
         	<ExecuteType>KikAppEmulator</ExecuteType> <!-- Compile - KikAppEmulator -->
-        <LocationAlwaysUsage/><LocationWhenInUseUsage/><AllowsArbitraryLoads/></iOS>
-       <EnableNotification/></application>	
+            <LocationAlwaysUsage/>
+            <LocationWhenInUseUsage/>
+            <AllowsArbitraryLoads/>
+        </iOS>
+            <EnableNotification/>
+    </application>	
 </manifest>
