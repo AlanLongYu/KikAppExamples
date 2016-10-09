@@ -39,7 +39,6 @@ $input_work-> setLabelCaption("Work");
 $input_message= new InputText();
 $input_message-> setLabelCaption("Message");
 
-
 $mainTable -> addControl($input_name,1,1);
 $mainTable -> addControl($input_lastname,2,1);
 $mainTable -> addControl($input_email,3,1);
@@ -48,19 +47,20 @@ $mainTable -> addControl($input_work,5,1);
 $mainTable -> addControl($input_message,6,1);
 $mainTable -> addControl($btn_contact_add,7,1);
 $mainTable -> addControl($btn_contact_viewAll,8,1);
-
 $win -> addControl($mainTable);
 
 function addContact(){
 	$isOk = new InputBoolean();
-	$isOk= AddressBook::AddContact($input_name,$input_lastname,$input_email,$input_phone,$input_work,"",$input_message);
+	$isOk= AddressBook::AddContact($input_name,
+				       $input_lastname,
+				       $input_email,
+				       $input_phone,
+				       $input_work,
+				       "",
+				       $input_message);
 
 	if ($isOk == true){
 		echo "Contact added!";
-	}
-	
+	}	
 }
-
-
-
 ?>
