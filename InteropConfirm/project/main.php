@@ -19,7 +19,7 @@ $win -> addControl($mainTable);
 
 function back(){
    $ok = new InputBoolean();
-   $ok = Interop::Confirm('Are you sure you want to close InteropConfirm app?');
+   $ok = Interop::Confirm('Are you sure you want to close?');
    if($ok == true){
       return;
    }
