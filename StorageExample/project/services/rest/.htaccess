@@ -1,8 +1,8 @@
 Options +FollowSymLinks
 RewriteEngine on
 
-##### htaccess version 1.0 #####
+##### htaccess version 0.1.28 #####
 
-RewriteRule ^main_Level_Detail$ main_Level_Detail.php [NC,L]
-RewriteRule ^main_login$ main_login.php [NC,L]
 
+RewriteRule ^notificationsregistrationhandler$ notificationsregistrationhandler.php [NC,L]
+RewriteRule ^sendnotifications$ sendnotifications.php [NC,L]
