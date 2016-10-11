@@ -6,7 +6,7 @@
 * @version 1.0 
 */
 
-define('_BLOB_PATH', "http://www.devxtend.com/nicolas/AndroidActionExample/services/");
+define('_BLOB_PATH', "http://localhost/services/");
 define('_FOLDER',"PublicStorage/");
 
 $fileName = getName() .".".getExtension(getHeader("Content-Type"));
