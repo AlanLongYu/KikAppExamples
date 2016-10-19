@@ -14,7 +14,8 @@
        	<TwitterAppSecret/>
        	<!-- Facebook -->
        	<FacebookAppId/>
-       	            	
+        <EnableNotification/>
+
     	<android layoutOrientation="Portrait" navigationStyle="Default">   
     	    <Theme>AndroidTheme</Theme>     	
         	<versionCode>1.0</versionCode>
@@ -46,6 +47,5 @@
             <LocationWhenInUseUsage/>
             <AllowsArbitraryLoads/>
         </iOS>
-            <EnableNotification/>
     </application>	
 </manifest>
