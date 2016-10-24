@@ -19,7 +19,7 @@ $combo_box_lugar-> setValues("All:1, Staples Center:2, Quickens Loans Arena:3");
 
 $boton = new Button();
 $boton -> setCaption("Search");
-$boton -> onTap(prueba());
+$boton -> onTap(clickme());
 
 $table -> addControl($lugar,1,1);
 $table -> addControl($combo_box_lugar,1,2);
@@ -27,7 +27,7 @@ $table -> addControl($boton,2,1,1,2,"","");
 
 $win -> addControl($table);
 
-function prueba(){
+function clickme(){
    echo "Searching...";
 }
 ?>
