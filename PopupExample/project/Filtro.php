@@ -14,7 +14,6 @@ $lugar -> setCaption("Place");
 
 $combo_box_lugar= new ComboBox();
 $combo_box_lugar-> setEmptyItem(false);
-//$combo_box_fecha-> setEmptyItemText("Choose options");
 $combo_box_lugar-> setValues("All:1, Staples Center:2, Quickens Loans Arena:3");
 
 $boton = new Button();
