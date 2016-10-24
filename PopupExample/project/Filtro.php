@@ -23,7 +23,7 @@ $boton -> onTap(prueba());
 
 $table -> addControl($lugar,1,1);
 $table -> addControl($combo_box_lugar,1,2);
-$table -> addControl($boton,4,1,1,2,"","");
+$table -> addControl($boton,2,1,1,2,"","");
 
 $win -> addControl($table);
 
