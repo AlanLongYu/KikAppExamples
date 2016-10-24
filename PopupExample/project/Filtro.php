@@ -18,7 +18,7 @@ $combo_box_fecha-> setEmptyItem(false);
 $combo_box_fecha-> setValues("Today:1,Next 7 days:2, Next 15 days:3");
 
 $genero = new Label();
-$genero -> setCaption("Genero");
+$genero -> setCaption("Gender");
 
 $combo_box_genero= new ComboBox();
 $combo_box_genero-> setEmptyItem(false);
@@ -34,7 +34,7 @@ $combo_box_lugar-> setEmptyItem(false);
 $combo_box_lugar-> setValues("All:1, Staples Center:2, Quickens Loans Arena:3");
 
 $boton = new Button();
-$boton -> setCaption("Buscar");
+$boton -> setCaption("Search");
 $boton -> onTap(prueba());
 
 $table -> addControl($fecha,1,1);
