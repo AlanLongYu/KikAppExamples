@@ -42,7 +42,8 @@ function login(){
 		//you can't leave it blank
 	}else{
 			ProgressIndicator::ShowWithTitle("Loading...");
-			ProgressIndicator::Hide(); //Closes the ProgressIndicator when everything is done
+			ProgressIndicator::Hide();
+			//Closes the ProgressIndicator when everything is done
 			AndroidAction::GoHome();	
 	}		
 }
