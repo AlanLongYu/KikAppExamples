@@ -6,7 +6,7 @@
  */
 
 $win = new SDPanel();
-$win -> setCaption("Hello world");
+$win -> setCaption("SwitchControl");
 
 $mainTable = new Table();
 
