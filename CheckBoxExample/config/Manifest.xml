@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?><manifest>
-    <application generateAndroid="true" generateiOS="false">
+    <application generateAndroid="true" generateiOS="false" version="46">
         <main>main.php</main>
         <services>http://localhost/services/</services>
         <applicationTitle>Hello World</applicationTitle>    	
@@ -14,33 +14,39 @@
        	<TwitterAppSecret/>
        	<!-- Facebook -->
        	<FacebookAppId/>
+       	<EnableNotification/> <!-- True - False -->
        	            	
     	<android layoutOrientation="Portrait" navigationStyle="Default">   
     	    <Theme>Android</Theme>     	
         	<versionCode>1.0</versionCode>
         	<versionName>1.0</versionName>
-        	<packagedName>com.kikapp.checkboxexample3</packagedName>
+        	<packagedName>com.kikapp.pruebaversion47</packagedName>
         	<lunchImage>launchimage.png</lunchImage>
         	<applicationIcon>appicon.png</applicationIcon>
-        	<BaseStyle/> <!-- Default - Dark - Light - Light with Dark Action Bar -->
+        	<BaseStyle>Dark</BaseStyle> <!-- Default - Dark - Light - Light with Dark Action Bar -->
         	<!-- AdMob Publisher Id -->
         	<AdMobPublisherId/>	
         	<!-- Android Maps API Key -->
         	<MapAPIKey/>            	
         	<!-- YouTube -->
-        	<AndroidYoutubeAPIKey/>        	
+        	<AndroidYoutubeAPIKey/>           	
+        	<!-- Android sender Id - Notifications. -->
+			<AndroidSenderId/>    
+        	<AndroidSenderAPIKey/>   	        	
         </android>
         
         <iOS layoutOrientation="Portrait" navigationStyle="Default">
             <Theme>iOSTheme</Theme>
         	<versionCode>1.0</versionCode>
         	<versionName>1.0</versionName>
-        	<BundleIdentifier>com.kikapp.checkboxexample3</BundleIdentifier>
+        	<BundleIdentifier>com.kikapp.pruebaversion47</BundleIdentifier>
         	<Devices>Universal</Devices> <!-- Universal - iPhone - iPad  -->
         	<applicationIcon>appicon.png</applicationIcon>
         	<lunchImage>launchimage.png</lunchImage>
         	<ExecuteType>KikAppEmulator</ExecuteType> <!-- Compile - KikAppEmulator -->
+        	<LocationAlwaysUsage/> 
+        	<LocationWhenInUseUsage/>
+        	<AllowsArbitraryLoads>True</AllowsArbitraryLoads> <!-- True - False -->    	
         </iOS>
-        
        </application>	
 </manifest>
