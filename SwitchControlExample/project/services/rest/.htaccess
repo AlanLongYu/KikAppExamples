@@ -1,0 +1,8 @@
+Options +FollowSymLinks
+RewriteEngine on
+
+##### htaccess version 0.1.28 #####
+
+
+RewriteRule ^notificationsregistrationhandler$ notificationsregistrationhandler.php [NC,L]
+RewriteRule ^sendnotifications$ sendnotifications.php [NC,L]

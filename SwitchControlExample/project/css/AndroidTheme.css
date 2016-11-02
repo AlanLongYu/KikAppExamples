@@ -1,0 +1,483 @@
+/**
+ * Theme CSS Android.
+ * @Version 1.0
+ /home/pblanco/Proyectos/Gecko/Cooparte_v10
+ */
+
+application{
+	/*action-tint-color: "#FFFFFF";*/
+}
+
+applicationBars{
+	background-color:"#ff6d00";
+	status-bar-color: "#ff8200";
+	forecolor: "#FFFFFF";
+	font-family: "Montserrat-Regular.ttf";
+}
+applicationBars.Home{
+}
+
+applicationBars.Contragolpe{
+	background-color: "#040d10";
+	status-bar-color: "#040d10";
+}
+
+ApplicationBarsHeaderRow{
+	background-color:"Transparent";
+	status-bar-color:"Transparent";
+	forecolor: "Transparent";
+	elevation: 0;
+}
+
+form{
+	enter-effect : "Slide Left";
+	exit-effect : "Push Down";
+}
+
+form.algo{
+	Call-Type : "Popup";
+	Target-Size : "Custom";
+	Target-Height: "60%";	
+}
+
+
+input{
+ 	font-family:"Roboto-Regular.ttf";
+ 	font-size:"14";
+ 	forecolor:"Black 79%";
+}
+
+input.TitleBlack{
+	 font-size:"22";
+	 font-family:"Roboto-Light.ttf";
+	 forecolor:"Black 89%";
+	 font-weight: "bold";
+}
+
+input.titleWhite{
+	 font-size:"16";
+	 font-family:"Roboto-Light.ttf";
+	 margin-left:10dip;
+	 forecolor:#FFFFFF;
+}
+
+input.titleProductNameWhite{
+	 font-size:"16";
+	 font-family:"Roboto-Light.ttf";
+	 font-weight: "bold";
+	 forecolor:"#FFFFFF";
+	 margin-top:10dip;
+}
+
+input.titleList{
+	 font-size:"17";
+	 font-family:"Roboto-Light.ttf";
+	 forecolor:"Black 50%";
+	 font-weight: "bold";
+}
+
+input.priceList{
+	 font-size:"15";
+	 font-family:"Roboto-Light.ttf";
+	 forecolor:"#e57200";
+	 font-weight: "bold";
+}	
+
+input.dateList{
+	 font-size:"14";
+	 font-family:"Roboto-Light.ttf";
+	 forecolor:"Black 50%";
+}	
+
+input.Form{
+	/*background-color:"#FFFFFF 85%";*/
+	margin-top:10dip;	
+	margin-bottom:10dip;
+	padding-left:5dip;
+	forecolor:"#6f6f6f";
+	label-class:"label.rojo";
+}
+
+label.rojo{
+	forecolor:"#e57200";
+}
+
+input.textPrice{
+	forecolor:#e57200;
+	font-weight : "bold";
+	label-class:"label.red";
+	label-vertical-alignment: "middle";
+	label-horizontal-alignment: "Right";	
+}
+
+input.textDate{
+	forecolor:#FFFFFF;
+	font-weight : "bold";
+	/*label-class:"label.red";
+	label-vertical-alignment: "middle";
+	label-horizontal-alignment: "Right";*/	
+}
+
+input.textDateGray{
+	forecolor:#DCDCDC;
+	font-weight : "bold";
+	/*label-class:"label.red";
+	label-vertical-alignment: "middle";
+	label-horizontal-alignment: "Right";*/	
+}
+
+input.textPriceTotal{
+	forecolor:#e57200;
+	font-size:"17";
+	font-weight : "bold";
+	label-class:"label.red";
+	label-vertical-alignment: "middle";
+	label-horizontal-alignment: "Right";	
+}
+
+label.red{
+	forecolor:#e57200;
+	font-weight : "bold";
+}
+
+input.textStock{
+	forecolor:"#FFFFFF";
+	background-color:"#80ab06";
+	font-weight : "bold";/*
+	width:"20dip";
+	height:"10dip";*/
+}
+
+input.textPlace{
+	forecolor:#DCDCDC;
+	font-weight : "bold";
+}
+
+input.textDescription{
+	 font-size:"13";
+	 font-family:"Roboto-Light.ttf";
+	 forecolor:"Gray 89%";
+	 padding-left:15dip;
+	 padding-right:15dip;
+	 padding-bottom:15dip;
+	 
+}
+
+input.textPlaceList{
+	 font-size:"13";
+	 font-family:"Roboto-Light.ttf";
+	 forecolor:"Gray 89%";
+}
+
+input.textListwhite{
+	forecolor:#FFFFFF;
+	font-weight : "bold";
+	margin-right:10dip;
+}
+
+input.categories {
+	font-family:"Roboto-Regular.ttf";
+ 	font-size:"16";	
+ 	forecolor:"#ffffff 95%";
+ 	margin-left:15dip;
+ 	margin-top:10dip;
+}
+table.categorias{
+	Highlighted-Background-Color: "#e85858";
+}
+table.prueba{
+	elevation: 1;
+}
+
+input.textwhite{
+	forecolor:#FFFFFF;
+}
+
+input.textTitlewhite{
+	forecolor:#FFFFFF;
+	font-weight :"bold";
+	font-size:"19";
+}
+
+button{
+	font-family:"Roboto-Regular.ttf";
+ 	font-size:"17";		
+}
+
+button.Form{
+	background-color:"#ff8000";
+	font-weight:"bold";
+	forecolor:"#FFFFFF";
+	margin-left:10dip;
+	margin-right:10dip;
+	margin-bottom:10dip;
+}
+
+button.Small{
+	background-color:"#ff8000";
+	font-weight:"bold";
+	forecolor:"#FFFFFF";
+	margin-left:80dip;
+	margin-right:80dip;
+	margin-bottom:10dip;
+}
+
+button.green{
+	background-color:#7ad108;
+	font-weight:"bold";
+	forecolor:"#FFFFFF";	
+	margin-top:0dip;
+	margin-left:0dip;
+	margin-right:0dip;
+	margin-bottom:8dip;
+}
+
+label{
+	font-family:"Roboto-Regular.ttf";
+ 	font-size:"14";
+ 	forecolor:"#6f6f6f";	
+}
+
+label.Titlelogin {
+	font-family:"Roboto-Regular.ttf";
+ 	font-size:"20";	
+}
+
+label.SubTitlelogin {
+	font-family:"Roboto-Regular.ttf";
+ 	font-size:"15";	
+}
+
+label.MenuOption {
+	font-family:"Roboto-Regular.ttf";
+ 	font-size:"17";	
+ 	forecolor:"#6f6f6f";
+ 	/*background-color:"";*/
+}
+
+table{
+	margin-bottom:0dip;
+	margin-top:0dip;
+	margin-left:0dip;	
+	margin-right:0dip;	
+	background-color:"";
+}
+
+table.gray{
+	background-color: #DCDCDC;
+}
+table.white{
+	background-color: #FFFFFF;
+	padding:0;
+	margin:0;
+}
+
+table.MenuOption{
+	margin-bottom:2dip;
+	margin-top:2dip;
+	margin-left:5dip;	
+	margin-right:5dip;
+	
+}
+
+table.Menu{
+	background-color:"#ffffff";
+	Show-Horizontal-Line-Separator-Between-Rows:"true";
+	Horizontal-Line-Separator:"HorizontalLine";
+}
+
+HorizontalLine{
+	background-color: #000000;
+	Height:"5dip";
+}
+
+
+table.product {
+	margin-bottom:10dip;
+	margin-top:5dip;
+	margin-left:5dip;	
+	margin-right: 5dip;
+}
+
+table.sliderBottom {
+	padding-bottom:0dip;
+	padding-top:5dip;
+	padding-left:5dip;
+	background-color:"Black 20%";
+}
+
+table.productMargin {
+	background-color:"Black 45%";
+	padding-left:5dip;
+	padding-right:5dip;
+	
+}
+
+table.grid {
+	background-color: #FFFFFF;
+	margin:10dip;
+	margin-top: 0dip;
+}
+
+table.artistas {
+	background-color: #FFFFFF;
+}
+
+
+table.cartMain {
+	/*background-image: urls("img/emptyCart.png");*/
+	background-color:#333333;
+}
+
+table.backgroundforms {
+	background-color:#FFFFFF;
+}
+
+table.TableDetailMain {
+	margin:0dip;
+	padding:0dip;
+}
+
+table.GridProduct {
+	margin-bottom:10dip;
+	margin-top:10dip;
+	margin-left:10dip;
+	margin-right:10dip;
+	background-color:#FFFFFF;
+	border-style:"Solid";
+	border-color:#D8D8D8;
+	border-width:"1dip";
+	border-radius:"1dip";
+}
+
+
+table.forms {	
+	margin-left:10dip;
+	margin-right:10dip;
+	margin-bottom:20dip;
+}
+
+table.checkout {
+	padding-left:10dip;
+	padding-right:10dip;
+	padding-bottom:5dip;
+	padding-top:5dip;
+	background-color:#222222;
+}
+
+
+
+table.Footer{
+	background-color:#ff8000;
+}
+
+image{
+	
+}
+
+image.MenuFooter{
+	padding-left:"10dip";
+	scale-type:"originalSize";
+	/*width:"36dip";
+	height:"36dip";*/	
+}
+
+image.imageList {
+	margin-left:0dip;
+	margin-right:0dip;		
+	margin-top:0dip;
+	scale-type:"scaleAspectFillKeepingAspect";	
+}
+
+image.checkout {
+	/*margin-right:10dip;*/		
+	/*scale-type:"scaleAspectFillKeepingAspect";*/
+	scale-type: "scaleAspectFillKeepingAspect";	
+	width:"100%";
+	height:"100%";
+	margin-right:10dip;
+}
+
+image.imageList2 {
+	margin-left:0dip;
+	margin-right:0dip;		
+	margin-top:5dip;
+	scale-type:"scaleAspectFillKeepingAspect";	
+}
+
+image.espectaculoDetalle {
+	margin-left:0dip;
+	margin-right:0dip;		
+	margin-top:0dip;
+	/*scale-type:"scaleAspectFillKeepingAspect";*/
+	scale-type:"scaleAspectFillKeepingAspect";	
+	
+}
+
+image.menu {	
+	margin-right:5dip;
+	width:"25dip";
+	height:"25dip";		
+	scale-type: "scaleToFill";	
+}
+
+image.iconMini {	
+	margin-right:5dip;
+	width:"15dip";
+	height:"15dip";		
+	/*scale-type: "scaleToFill";*/	
+}
+
+image.roundedListImage{
+	
+	margin-top:"10dip";
+	margin-left:"10dip";
+	margin-right:"10dip";
+	margin-bottom:"0dip";
+	scale-type: "scaleAspectFillKeepingAspect";
+}
+
+
+image.actionBarIcon {	
+	margin-right:5dip;
+	width:"20dip";
+	height:"20dip";		
+	scale-type: "scaleToFill";	
+}
+
+grid{
+	/*Highlighted-Background-Color: "#DBDBDB";*/
+}
+
+grid.artista{
+	margin-top: 10dip;
+}
+
+grid.Thumb{
+	//ver estas opciones porque no las esta cargando.
+	Show-Horizontal-Line-Separator-Between-Rows:"true";
+	Horizontal-Line-Separator:"HorizontalLineThumb";
+}
+
+HorizontalLine{}
+
+HorizontalLine.Thumb{
+	background-color: #FFFFFF;
+	Height:"5dip";
+}
+
+Tab{
+	Tab-Strip-Background-Color:#94C641;
+	Tab-Strip-Indicator-color:"Gainsboro";
+	Tab-Strip-Separator-Color:#DBDBDB;
+}
+
+TabPage{
+	
+}
+
+PageController{
+	background-color:#DCDCDC;
+	Indicator-Selected-Color:"#ff8000";
+	Indicator-Unselected-Color:#ff8000;	
+}

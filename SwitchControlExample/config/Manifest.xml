@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest>
+    <application generateAndroid="true" generateiOS="false" version="46">
+        <main>main.php</main>
+        <services>http://localhost/services/</services>
+        <applicationTitle>Hello World</applicationTitle>    	
+       	<!-- Adds -->
+       	<EnableAds/> <!-- True - False -->
+       	<AdsProvider/> <!-- AdMob - Mobfox - SmartAd -->
+       	<!-- Analytics -->
+       	<EnableAnalytics/> <!-- True - False -->
+       	<GoogleAnalyticsTrackerId/>
+       	<!-- Twitter -->
+       	<TwitterAppKey/>
+       	<TwitterAppSecret/>
+       	<!-- Facebook -->
+       	<FacebookAppId/>
+       	<EnableNotification/> <!-- True - False -->
+       	            	
+    	<android layoutOrientation="Portrait" navigationStyle="Default">   
+    	    <Theme>AndroidTheme</Theme>     	
+        	<versionCode>1.0</versionCode>
+        	<versionName>1.0</versionName>
+        	<packagedName>com.kikapp.pruebaversion47</packagedName>
+        	<lunchImage>launchimage.png</lunchImage>
+        	<applicationIcon>appicon.png</applicationIcon>
+        	<BaseStyle>Light</BaseStyle> <!-- Default - Dark - Light - Light with Dark Action Bar -->
+        	<!-- AdMob Publisher Id -->
+        	<AdMobPublisherId/>	
+        	<!-- Android Maps API Key -->
+        	<MapAPIKey/>            	
+        	<!-- YouTube -->
+        	<AndroidYoutubeAPIKey/>           	
+        	<!-- Android sender Id - Notifications. -->
+			<AndroidSenderId/>    
+        	<AndroidSenderAPIKey/>   	        	
+        </android>
+        
+        <iOS layoutOrientation="Portrait" navigationStyle="Default">
+            <Theme>iOSTheme</Theme>
+        	<versionCode>1.0</versionCode>
+        	<versionName>1.0</versionName>
+        	<BundleIdentifier>com.kikapp.pruebaversion47</BundleIdentifier>
+        	<Devices>Universal</Devices> <!-- Universal - iPhone - iPad  -->
+        	<applicationIcon>appicon.png</applicationIcon>
+        	<lunchImage>launchimage.png</lunchImage>
+        	<ExecuteType>KikAppEmulator</ExecuteType> <!-- Compile - KikAppEmulator -->
+        	<LocationAlwaysUsage/> 
+        	<LocationWhenInUseUsage/>
+        	<AllowsArbitraryLoads>True</AllowsArbitraryLoads> <!-- True - False -->    	
+        </iOS>
+       </application>	
+</manifest>
