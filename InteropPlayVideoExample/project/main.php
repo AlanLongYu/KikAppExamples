@@ -20,7 +20,7 @@ $mainTable -> addControl($button,1,1);
 $win -> addControl($mainTable);
 
 function clickme(){
-   $video_url = "https://www.kikapptools.com/wp-content/uploads/2016/02/Kikapp-Hd-video.mp4";
+   $video_url = "https://goo.gl/06VzAw";
    Interop::PlayVideo($video_url);
 }
 
