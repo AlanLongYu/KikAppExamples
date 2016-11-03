@@ -16,8 +16,7 @@ $button = new Button();
 $button -> setCaption("Click me!");
 $button -> onTap(clickme());
 
-//$mainTable -> addControl($switch1,1,1,1,1,"Center","Middle");
-$mainTable -> addControl($button,2,1);
+$mainTable -> addControl($button,1,1);
 $win -> addControl($mainTable);
 
 function clickme(){
