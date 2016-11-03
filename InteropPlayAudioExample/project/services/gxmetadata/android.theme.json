@@ -1,0 +1,377 @@
+{ 
+    "Styles" : [ { 
+        "Name" : "Form",
+        "DefaultClass" : true,
+        "enter_effect" : "gx_default",
+        "close_effect" : "gx_default",
+        "call_type" : "gx_default",
+        "target_size" : "gx_default",
+        "target_width" : "100%",
+        "target_height" : "100%",
+        "content_size_change" : "gx_default",
+        "Styles" : [ { 
+            "Name" : "Formalgo",
+            "enter_effect" : "gx_default",
+            "close_effect" : "gx_default",
+            "call_type" : "gx_default",
+            "target_name" : "",
+            "target_size" : "gx_default"
+        } ]
+    }, { 
+        "Name" : "Dashboard",
+        "DefaultClass" : true
+    }, { 
+        "Name" : "DashboardOption",
+        "DefaultClass" : true,
+        "ThemeTransformationReference" : "(none)",
+        "ThemeAnimated" : "False"
+    }, { 
+        "Name" : "Group",
+        "DefaultClass" : true,
+        "ThemeTransformationReference" : "(none)",
+        "ThemeAnimated" : "False",
+        "background_image_mode" : "stretch",
+        "sdmotion_max_horizontal" : "0",
+        "sdmotion_max_vertical" : "0"
+    }, { 
+        "Name" : "GroupSeparator",
+        "DefaultClass" : true
+    }, { 
+        "Name" : "AudioController",
+        "DefaultClass" : true
+    }, { 
+        "Name" : "Matrix",
+        "DefaultClass" : true,
+        "YAxisTitleLabelClassReference" : "MatrixLabel",
+        "YAxisDescriptionLabelClassReference" : "MatrixLabel",
+        "XAxisLabelClassReference" : "MatrixLabel",
+        "CellTableClassReference" : "MatrixCell",
+        "SelectedCellTableClassReference" : "MatrixSelectedCell",
+        "XAxisTableClassReference" : "MatrixAxisTable",
+        "YAxisTableClassReference" : "MatrixAxisTable",
+        "RowTableClassReferenceEven" : "MatrixRowTable",
+        "RowTableClassReferenceOdd" : "MatrixRowTable",
+        "SelectedRowTableClassReference" : "MatrixRowTable",
+        "showHorizontalRules" : "True",
+        "HorizontalLineSeparatorClassReference" : "MatrixLineSeparator",
+        "VerticalLineSeparatorClassReference" : "MatrixLineSeparator",
+        "showVerticalRules" : "True",
+        "ThemeTransformationReference" : "(none)",
+        "ThemeAnimated" : "False",
+        "background_image_mode" : "stretch"
+    }, { 
+        "Name" : "MatrixAxisLabel",
+        "DefaultClass" : true,
+        "VerticalAlignment" : "Default",
+        "HorizontalAlignment" : "Default",
+        "ThemeTransformationReference" : "(none)",
+        "ThemeAnimated" : "False"
+    }, { 
+        "Name" : "Calendar",
+        "DefaultClass" : true,
+        "ThemeTransformationReference" : "(none)",
+        "ThemeAnimated" : "False",
+        "background_image_mode" : "stretch",
+        "sdmotion_max_horizontal" : "0",
+        "sdmotion_max_vertical" : "0"
+    }, { 
+        "Name" : "SDMapPinImage",
+        "DefaultClass" : true,
+        "PinHeight" : "0",
+        "PinWidth" : "0"
+    }, { 
+        "Name" : "Application",
+        "DefaultClass" : true,
+        "background_image_mode" : "stretch",
+        "image_loading_indicator" : "False"
+    }, { 
+        "Name" : "ApplicationBars",
+        "DefaultClass" : true,
+        "background_color" : "#32A3CB",
+        "status_bar_color" : "#4CBAE3",
+        "Styles" : [ { 
+            "Name" : "ApplicationBarsContragolpe"
+        }, { 
+            "Name" : "ApplicationBarsHome"
+        }, { 
+            "Name" : "ApplicationBarsHeaderRow"
+        } ]
+    }, { 
+        "Name" : "Attribute",
+        "DefaultClass" : true,
+        "ThemeTransformationReference" : "(none)",
+        "ThemeAnimated" : "False",
+        "ThemeLabelClassReference" : "TextBlock",
+        "Styles" : [ { 
+            "Name" : "AttributeSubtitle",
+            "ThemeLabelClassReference" : "TextBlockSubtitle"
+        }, { 
+            "Name" : "InputForm",
+            "ThemeLabelClassReference" : "TextBlock"
+        }, { 
+            "Name" : "InputTitleBlack",
+            "ThemeLabelClassReference" : "TextBlock"
+        }, { 
+            "Name" : "Inputcategories",
+            "ThemeLabelClassReference" : "TextBlock"
+        }, { 
+            "Name" : "InputdateList",
+            "ThemeLabelClassReference" : "TextBlock"
+        }, { 
+            "Name" : "InputpriceList",
+            "ThemeLabelClassReference" : "TextBlock"
+        }, { 
+            "Name" : "InputtextDate",
+            "ThemeLabelClassReference" : "TextBlock"
+        }, { 
+            "Name" : "InputtextDateGray",
+            "ThemeLabelClassReference" : "TextBlock"
+        }, { 
+            "Name" : "InputtextDescription",
+            "ThemeLabelClassReference" : "TextBlock"
+        }, { 
+            "Name" : "InputtextListwhite",
+            "ThemeLabelClassReference" : "TextBlock"
+        }, { 
+            "Name" : "InputtextPlace",
+            "ThemeLabelClassReference" : "TextBlock"
+        }, { 
+            "Name" : "InputtextPlaceList",
+            "ThemeLabelClassReference" : "TextBlock"
+        }, { 
+            "Name" : "InputtextPrice",
+            "ThemeLabelClassReference" : "TextBlock"
+        }, { 
+            "Name" : "InputtextPriceTotal",
+            "ThemeLabelClassReference" : "TextBlock"
+        }, { 
+            "Name" : "InputtextStock",
+            "ThemeLabelClassReference" : "TextBlock"
+        }, { 
+            "Name" : "InputtextTitlewhite",
+            "ThemeLabelClassReference" : "TextBlock"
+        }, { 
+            "Name" : "Inputtextwhite",
+            "ThemeLabelClassReference" : "TextBlock"
+        }, { 
+            "Name" : "InputtitleList",
+            "ThemeLabelClassReference" : "TextBlock"
+        }, { 
+            "Name" : "InputtitleProductNameWhite",
+            "ThemeLabelClassReference" : "TextBlock"
+        }, { 
+            "Name" : "InputtitleWhite",
+            "ThemeLabelClassReference" : "TextBlock"
+        }, { 
+            "Name" : "AttributeReadOnly",
+            "ThemeLabelClassReference" : "TextBlock"
+        }, { 
+            "Name" : "AttributeTitle",
+            "ThemeLabelClassReference" : "TextBlockTitle"
+        } ]
+    }, { 
+        "Name" : "Button",
+        "DefaultClass" : true,
+        "ThemeTransformationReference" : "(none)",
+        "ThemeAnimated" : "False",
+        "font_family" : "Roboto-Regular.ttf",
+        "font_size" : "14dip",
+        "Styles" : [ { 
+            "Name" : "ButtonForm"
+        }, { 
+            "Name" : "ButtonSmall"
+        }, { 
+            "Name" : "Buttongreen"
+        }, { 
+            "Name" : "Buttonblue",
+            "margin_bottom" : "0dip",
+            "margin_left" : "0dip",
+            "margin_right" : "0dip",
+            "margin_top" : "15dip",
+            "background_color" : "#00FFFF",
+            "color" : "#FFFFFF",
+            "font_size" : "18dip",
+            "font_weight" : "bold"
+        } ]
+    }, { 
+        "Name" : "Grid",
+        "DefaultClass" : true,
+        "ThemeTransformationReference" : "(none)",
+        "ThemeAnimated" : "False",
+        "background_image_mode" : "stretch",
+        "sd_row_horizontal_line_separator" : "True",
+        "Styles" : [ { 
+            "Name" : "GridThumb"
+        }, { 
+            "Name" : "Gridartista"
+        } ]
+    }, { 
+        "Name" : "GridRow",
+        "DefaultClass" : true,
+        "ThemeTransformationReference" : "(none)",
+        "ThemeAnimated" : "False",
+        "background_image_mode" : "stretch",
+        "Styles" : [ { 
+            "Name" : "GridRowEven"
+        }, { 
+            "Name" : "GridRowOdd"
+        } ]
+    }, { 
+        "Name" : "HorizontalLine",
+        "DefaultClass" : true,
+        "Styles" : [ { 
+            "Name" : "MatrixLineSeparator"
+        }, { 
+            "Name" : "HorizontalLineThumb"
+        } ]
+    }, { 
+        "Name" : "Image",
+        "DefaultClass" : true,
+        "ThemeTransformationReference" : "(none)",
+        "ThemeAnimated" : "False",
+        "image_loading_indicator" : "False",
+        "sdmotion_max_horizontal" : "0",
+        "sdmotion_max_vertical" : "0",
+        "Styles" : [ { 
+            "Name" : "ImageMenuFooter"
+        }, { 
+            "Name" : "ImageactionBarIcon"
+        }, { 
+            "Name" : "Imagecheckout"
+        }, { 
+            "Name" : "ImageespectaculoDetalle"
+        }, { 
+            "Name" : "ImageiconMini"
+        }, { 
+            "Name" : "ImageimageList"
+        }, { 
+            "Name" : "ImageimageList2"
+        }, { 
+            "Name" : "ImageroundedListImage"
+        }, { 
+            "Name" : "Imagemenu",
+            "margin_right" : "5dip",
+            "height" : "34dip",
+            "width" : "34dip",
+            "content_mode" : "scaleToFill"
+        } ]
+    }, { 
+        "Name" : "SDPageController",
+        "DefaultClass" : true,
+        "SDPageControllerBackgroundColor" : "#000000",
+        "SDPageIndicatorSelectedColor" : "#FFFFFF",
+        "SDPageIndicatorUnselectedColor" : "#777777"
+    }, { 
+        "Name" : "Tab",
+        "DefaultClass" : true,
+        "ThemeTransformationReference" : "(none)",
+        "ThemeAnimated" : "False"
+    }, { 
+        "Name" : "TabPage",
+        "DefaultClass" : true,
+        "Styles" : [ { 
+            "Name" : "TabPageSelected"
+        }, { 
+            "Name" : "TabPageUnselected"
+        } ]
+    }, { 
+        "Name" : "Table",
+        "DefaultClass" : true,
+        "ThemeTransformationReference" : "(none)",
+        "ThemeAnimated" : "False",
+        "margin_bottom" : "0dip",
+        "margin_left" : "0dip",
+        "margin_right" : "0dip",
+        "margin_top" : "0dip",
+        "background_image_mode" : "stretch",
+        "sd_row_horizontal_line_separator" : "False",
+        "sdmotion_max_horizontal" : "0",
+        "sdmotion_max_vertical" : "0",
+        "Styles" : [ { 
+            "Name" : "MatrixCell"
+        }, { 
+            "Name" : "MatrixSelectedCell"
+        }, { 
+            "Name" : "MatrixAxisTable"
+        }, { 
+            "Name" : "MatrixEvenRowTable"
+        }, { 
+            "Name" : "MatrixOddRowTable"
+        }, { 
+            "Name" : "MatrixSelectedRowTable"
+        }, { 
+            "Name" : "TableFooter"
+        }, { 
+            "Name" : "TableGridProduct"
+        }, { 
+            "Name" : "TableMenu"
+        }, { 
+            "Name" : "TableTableDetailMain"
+        }, { 
+            "Name" : "Tableartistas"
+        }, { 
+            "Name" : "Tablebackgroundforms"
+        }, { 
+            "Name" : "TablecartMain"
+        }, { 
+            "Name" : "Tablecategorias"
+        }, { 
+            "Name" : "Tablecheckout"
+        }, { 
+            "Name" : "Tableforms"
+        }, { 
+            "Name" : "Tablegray"
+        }, { 
+            "Name" : "Tablegrid"
+        }, { 
+            "Name" : "Tableproduct"
+        }, { 
+            "Name" : "TableproductMargin"
+        }, { 
+            "Name" : "Tableprueba"
+        }, { 
+            "Name" : "TablesliderBottom"
+        }, { 
+            "Name" : "Tablewhite"
+        }, { 
+            "Name" : "TableMenuOption",
+            "margin_bottom" : "5dip",
+            "margin_left" : "5dip",
+            "margin_right" : "5dip",
+            "margin_top" : "5dip"
+        } ]
+    }, { 
+        "Name" : "TextBlock",
+        "DefaultClass" : true,
+        "ThemeTransformationReference" : "(none)",
+        "ThemeAnimated" : "False",
+        "color" : "#FFFFFF",
+        "font_family" : "Roboto-Regular.ttf",
+        "font_size" : "16dip",
+        "Styles" : [ { 
+            "Name" : "TextBlockTitle"
+        }, { 
+            "Name" : "TextBlockSubtitle"
+        }, { 
+            "Name" : "CalendarLabel",
+            "font_size" : "34dip"
+        }, { 
+            "Name" : "LabelSubTitlelogin"
+        }, { 
+            "Name" : "LabelTitlelogin"
+        }, { 
+            "Name" : "Labelred"
+        }, { 
+            "Name" : "Labelrojo"
+        }, { 
+            "Name" : "LabelHome",
+            "font_size" : "20dip"
+        }, { 
+            "Name" : "LabelMenuOption",
+            "color" : "#FFFFFF95",
+            "font_size" : "17dip"
+        } ]
+    } ],
+    "Transformations" : [ ],
+    "Fonts" : [ ]
+}
