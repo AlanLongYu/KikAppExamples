@@ -34,15 +34,15 @@ $win -> addControl($mainTable);
 
 
 function shareImage(){
-	Share::ShareImage($img,'Body text','https://www.kikapptools.com/about/','Title text');	
+	Share::ShareImage($img,'Body text','goo.gl/C1zoB7','Title text');	
 }
 
 function shareText(){
-	Share::ShareText($input,'https://www.kikapptools.com/about/','Title text');	
+	Share::ShareText($input,'goo.gl/C1zoB7','Title text');	
 }
 
 function ClientStart(){
-	$img->setValue("https://www.kikapptools.com/wp-content/uploads/2016/04/bannerHome_1500x500-e1460834756930.png");
+	$img->setValue("goo.gl/mSbYaX");
 } 
  
 ?>
